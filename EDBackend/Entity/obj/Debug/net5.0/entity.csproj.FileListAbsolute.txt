@@ -1,0 +1,12 @@
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\bin\Debug\net5.0\entity.deps.json
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\bin\Debug\net5.0\entity.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\bin\Debug\net5.0\entity.pdb
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\entity.csproj.AssemblyReference.cache
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\entity.AssemblyInfoInputs.cache
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\entity.AssemblyInfo.cs
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\entity.csproj.CoreCompileInputs.cache
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\entity.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\refint\entity.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\entity.pdb
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\entity\obj\Debug\net5.0\ref\entity.dll

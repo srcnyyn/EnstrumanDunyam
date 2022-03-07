@@ -1,0 +1,17 @@
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\bin\Debug\net5.0\business.deps.json
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\bin\Debug\net5.0\business.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\bin\Debug\net5.0\business.pdb
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\bin\Debug\net5.0\DataAccess.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\bin\Debug\net5.0\entity.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\bin\Debug\net5.0\entity.pdb
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\business.csproj.AssemblyReference.cache
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\business.AssemblyInfoInputs.cache
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\business.AssemblyInfo.cs
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\business.csproj.CoreCompileInputs.cache
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\business.csproj.CopyComplete
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\business.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\refint\business.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\business.pdb
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\business\obj\Debug\net5.0\ref\business.dll
