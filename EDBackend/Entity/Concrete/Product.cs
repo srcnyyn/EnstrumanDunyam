@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Entity.Concrete
 {
     public class Product
@@ -10,4 +13,5 @@ namespace Entity.Concrete
         public int Quantity { get; set; }
         public string ProductName { get; set; }
     }
+        
 }
