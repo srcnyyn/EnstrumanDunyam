@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fc1NmaRAv9l//sHTlgIY9JnX5giZx+h7luW4d7vIAxnCVy/WSsdLtbXRoRVRkQsfJqFaQ8Kyrt8CrQjjPyLgMQ==",
+  "dgSpecHash": "wuMnXh7ey+J3E2RlQasK89MmBYFn0QiJwXahT1y1gQImMKD49PcLLlyzplmsNrN8iIi2eWBW8BKnVY8GhmT+mQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serca\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\serca\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

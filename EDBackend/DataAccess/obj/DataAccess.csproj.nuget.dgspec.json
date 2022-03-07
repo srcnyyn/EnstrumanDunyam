@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\serca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\Entity.csproj"
+              "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\Entity.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\Entity.csproj": {
+    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\serca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serca\\AppData\\Roaming\\NuGet\\NuGet.Config",

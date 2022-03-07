@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Abstract;
+using DataAccess.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +32,16 @@ namespace EDAPI
         {
 
             services.AddControllers();
+            services.AddSingleton<IProductService,ProductManager>();
+            services.AddSingleton<IProductDal,ProductDal>();
+            services.AddSingleton<ICategoryService,CategoryManager>();
+            services.AddSingleton<ICategoryDal,CategoryDal>();
+            services.AddSingleton<IChildCategoryService,ChildCategoryManager>();
+            services.AddSingleton<IChildCategoryDal,ChildCategoryDal>();
+            services.AddSingleton<IColorService,ColorManager>();
+            services.AddSingleton<IColorDal,ColorDal>();
+            services.AddSingleton<IBrandService,BrandManager>();
+            services.AddSingleton<IBrandDal,BrandDal>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EDAPI", Version = "v1" });

@@ -47,8 +47,8 @@ namespace Business.Concrete
             List<Product> productList = new List<Product>();
             foreach (var item in chCat)
             {
-                var childList = _productDal.GetAll(x => x.ChildCategoryId == item.ChildCategoryId).ToList();
-                foreach (var product in childList)
+                List<Product> childListProduct = _productDal.GetAll(x => x.ChildCategoryId == item.ChildCategoryId).ToList();
+                foreach (var product in childListProduct)
                 {
 
                 productList.Add(product);
@@ -66,17 +66,17 @@ namespace Business.Concrete
 
         public List<Product> GetByColorId(int id)
         {
-            throw new System.NotImplementedException();
+            return _productDal.GetAll(x=>x.ColorId == id);
         }
 
         public Product GetByProductId(int id)
         {
-            throw new System.NotImplementedException();
+            return _productDal.Get(x=>x.ProductId==id);
         }
 
         public void Update(Product entity)
         {
-            throw new System.NotImplementedException();
+            _productDal.Update(entity);
         }
     }
 }
