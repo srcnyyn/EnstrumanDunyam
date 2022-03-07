@@ -5742,11 +5742,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Business\\Business.csproj",
+      "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Business\\Business.csproj",
       "projectName": "Business",
-      "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Business\\Business.csproj",
+      "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Business\\Business.csproj",
       "packagesPath": "C:\\Users\\serca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Business\\obj\\",
+      "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\serca\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5763,11 +5763,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\Entity.csproj"
+            "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\Entity.csproj"
             }
           }
         }

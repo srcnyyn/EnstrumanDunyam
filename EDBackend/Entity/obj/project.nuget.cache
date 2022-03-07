@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7dqiGlQ/OgEdvNbhH6i8ySy+6ZXoQe9hAK4e82FEBWg9lH48BLnmzIIUpkFoPnUz6sEUeiPOx6dfxIDMtUA/PQ==",
+  "dgSpecHash": "2Fq7gGBvLtJm58v8L/v1rrBscAfa5n2D+MYweJhPIVlwLdCyH8OOJp2HYMIlUrIHWTzCJl0oUjiqU+HVLSPUsg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\Entity\\Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

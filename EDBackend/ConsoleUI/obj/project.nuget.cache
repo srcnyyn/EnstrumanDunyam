@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZVGM7DzcauUhU6NgBNvzN6IZ/RWLhRuACksNU5OwPTxx56VvrMryioWbxOZq0QLTTSSU+Lz1hSiAa/9feeNvfg==",
+  "dgSpecHash": "xI1Ro7eUBasfIjadeyK7ZUfVskenprPVLgrV+RzGFAD2k7z/48bJ4ixMIJcDLIxG8cqW/XlfKv67Noi6Z9gD1w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\consoleui\\ConsoleUI.csproj",
+  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\consoleui\\ConsoleUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serca\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\serca\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

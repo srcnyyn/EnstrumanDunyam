@@ -43,9 +43,20 @@ namespace Business.Concrete
         public List<Product> GetByCategoryId(int id)
         {
             var category = _categoryDal.Get(x => x.CategoryId == id);
-            var chCat = _childCategoryDal.GetAll(x => x.CategoryId == category.CategoryId);
-           
-            
+            var chCat = _childCategoryDal.GetAll().Where(x => x.CategoryId == category.CategoryId).ToList();
+            List<Product> productList = new List<Product>();
+            foreach (var item in chCat)
+            {
+                var childList = _productDal.GetAll(x => x.ChildCategoryId == item.ChildCategoryId).ToList();
+                foreach (var product in childList)
+                {
+
+                productList.Add(product);
+                }
+
+            }
+            return productList;
+
         }
 
         public List<Product> GetByChildCategoryId(int id)

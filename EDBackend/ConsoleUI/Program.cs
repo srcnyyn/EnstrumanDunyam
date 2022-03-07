@@ -15,19 +15,12 @@ namespace ConsoleUI
 
 
           
-            ColorManager colorManager = new ColorManager(new ColorDal());
-            Color color = new Color();
-
-            int deletedColor = 1002;
-            foreach (var hakki in colorManager.GetAll())
-            {
-                if (hakki.ColorId == deletedColor)
-                {
-
-                    colorManager.Delete(hakki);
-                }
-
-            }
+           ProductManager productManager = new ProductManager(new ProductDal(),new CategoryDal(),new ChildCategoryDal());
+           
+           foreach (var item in productManager.GetByCategoryId(2))
+           {
+               Console.WriteLine(item.ProductName +" "+ item.ChildCategoryId);
+           }
 
         }
     }
