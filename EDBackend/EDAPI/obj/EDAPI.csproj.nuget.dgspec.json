@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\EDAPI\\EDAPI.csproj": {}
+    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\EDAPI\\EDAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\EDAPI\\EDAPI.csproj": {
+    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\EDAPI\\EDAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\EDAPI\\EDAPI.csproj",
+        "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\EDAPI\\EDAPI.csproj",
         "projectName": "EDAPI",
-        "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\EDAPI\\EDAPI.csproj",
+        "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\EDAPI\\EDAPI.csproj",
         "packagesPath": "C:\\Users\\serca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\edbackend\\EDAPI\\obj\\",
+        "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\EDAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serca\\AppData\\Roaming\\NuGet\\NuGet.Config",
