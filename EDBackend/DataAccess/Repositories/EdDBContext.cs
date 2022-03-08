@@ -18,6 +18,7 @@ namespace DataAccess.Repositories
         public DbSet<Color> Colors{ get; set; }
         public DbSet<ChildCategory> ChildCategories{ get; set; }
         public DbSet<Category> Categories{ get; set; }
+       public DbSet<Image> Images{ get; set; }
     }
     
 }

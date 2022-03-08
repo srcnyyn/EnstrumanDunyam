@@ -1,6 +1,6 @@
 ﻿using System;
 using DataAccess.Repositories;
-using Business.Repositories;
+using Business.Utilities;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using Entity.Concrete;

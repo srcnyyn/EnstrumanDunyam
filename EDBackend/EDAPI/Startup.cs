@@ -42,6 +42,8 @@ namespace EDAPI
             services.AddSingleton<IColorDal,ColorDal>();
             services.AddSingleton<IBrandService,BrandManager>();
             services.AddSingleton<IBrandDal,BrandDal>();
+            services.AddSingleton<IImageService,ImageManager>();
+            services.AddSingleton<IImageDal,ImageDal>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EDAPI", Version = "v1" });

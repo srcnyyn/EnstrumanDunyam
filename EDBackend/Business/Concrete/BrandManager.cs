@@ -5,6 +5,8 @@ using Entity.Concrete;
 
 namespace Business.Concrete
 {
+    
+    
     public class BrandManager : IBrandService
     {
         IBrandDal _brandDal;
@@ -38,5 +40,6 @@ namespace Business.Concrete
         {
             _brandDal.Update(entity);
         }
+
     }
 }

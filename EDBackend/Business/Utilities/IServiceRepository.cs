@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Business.Repositories
+namespace Business.Utilities
 {
     public interface IServiceRepository<T> where T:class,new()
     {

@@ -66,3 +66,9 @@ C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\consoleui\bin\Debug\
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\consoleui\bin\Debug\net5.0\Business.pdb
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\consoleui\bin\Debug\net5.0\DataAccess.pdb
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\consoleui\obj\Debug\net5.0\ConsoleUI.csproj.CopyComplete
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.Net.Http.Headers.dll
