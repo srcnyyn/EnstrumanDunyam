@@ -19,36 +19,59 @@ namespace EDAPI.Controller
             _imageService = imageService;
         }
 
-        [HttpGet]
+        [HttpGet("getall")]
         public IActionResult GetAll()
-        { var images = new List<Image>();
-            try
+        { 
+           
+            var result = _imageService.GetAll();   
+            if (result.Success)
             {
-             images = _imageService.GetAll();   
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                
-                return  BadRequest(ex);
-            }
-            return Ok(images);
+            return BadRequest(result);
         }
-        [HttpPost]
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _imageService.Get(id);
+            if(result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("upload")]
         public IActionResult Upload([FromForm(Name ="Image")] IFormFile file , [FromForm] Image image)
         {
             
-            try
+          
+            var result =_imageService.Upload(file,image);
+            if (result.Success)
             {
-            _imageService.Upload(file,image);
+                return Ok(result);
             }
-            catch (Exception ex)
+            return BadRequest(result);
+           
+        }
+        [HttpDelete("delete")]
+        public IActionResult Delete(Image image)
+        {
+            var result = _imageService.Delete(image);
+            if(result.Success)
             {
-                
-                return BadRequest(ex);
+                return Ok(result);
             }
-            return Ok();
-           
-           
+            return BadRequest(result);
+        }
+        [HttpPost("update")]
+        public IActionResult Update([FromForm(Name ="Image")] IFormFile file,[FromForm] Image image)
+        {
+            var result = _imageService.Update(file,image);
+            if(result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
     }
 }

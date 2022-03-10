@@ -8,7 +8,7 @@ namespace EDAPI.Controller
 {
     [ApiController]
     [Route("[controller]")]
-    public class CategoryController:ControllerBase
+    public class CategoryController : ControllerBase
     {
         ICategoryService _categoryService;
 
@@ -20,71 +20,52 @@ namespace EDAPI.Controller
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            Category result = new Category();
-            try
+            var result = _categoryService.Get(id);
+            if (result.Success)
             {
-             result = _categoryService.Get(id);   
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
+            return BadRequest(result);
         }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            List<Category> result = new();
-            try
+            var result = _categoryService.GetAll();
+            if (result.Success)
             {
-                result = _categoryService.GetAll();
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
+            return BadRequest(result);
         }
         [HttpPost("add")]
         public IActionResult Add(Category category)
         {
-            try
+            var result = _categoryService.Add(category);
+            if (result.Success)
             {
-                _categoryService.Add(category);
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
         [HttpDelete("delete")]
         public IActionResult Delete(Category category)
         {
-            try
+            var result = _categoryService.Delete(category);
+            if (result.Success)
             {
-            _categoryService.Delete(category);
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
         [HttpPut("update")]
         public IActionResult Update(Category category)
         {
-            try
+            var result = _categoryService.Update(category);
+            if (result.Success)
             {
-                _categoryService.Update(category);
-
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
-
     }
 }

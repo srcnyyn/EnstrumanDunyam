@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "FluentValidation/10.3.6": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/FluentValidation.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Http/2.2.2": {
         "type": "package",
         "dependencies": {
@@ -1604,6 +1613,27 @@
     }
   },
   "libraries": {
+    "FluentValidation/10.3.6": {
+      "sha512": "iMd370ZDx6ydm8t7bIFdRbSKX0e42lpvCtifUSbTSXOk5iKjmgl7HU0PXBhIWQAyIRi3gCwfMI9luj8H6K+byw==",
+      "type": "package",
+      "path": "fluentvalidation/10.3.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.10.3.6.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Http/2.2.2": {
       "sha512": "BAibpoItxI5puk7YJbIGj95arZueM8B8M5xT1fXBn3hb3L2G3ucrZcYXv1gXdaroLbntUs8qeV8iuBrpjQsrKw==",
       "type": "package",
@@ -5954,6 +5984,7 @@
     "net5.0": [
       "DataAccess >= 1.0.0",
       "Entity >= 1.0.0",
+      "FluentValidation >= 10.3.6",
       "Microsoft.AspNetCore.Http >= 2.2.2"
     ]
   },
@@ -6003,6 +6034,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[10.3.6, )"
+          },
           "Microsoft.AspNetCore.Http": {
             "target": "Package",
             "version": "[2.2.2, )"

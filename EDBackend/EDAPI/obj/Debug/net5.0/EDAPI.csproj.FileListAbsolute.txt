@@ -60,3 +60,4 @@ C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\Business.pdb
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\Entity.pdb
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\FluentValidation.dll

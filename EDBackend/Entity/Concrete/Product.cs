@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entity.Concrete
 {
     public class Product
     {
+        
         public int ProductId { get; set; }
+        
         public int BrandId { get; set; }
         public int ColorId { get; set; }
         public int ChildCategoryId { get; set; }

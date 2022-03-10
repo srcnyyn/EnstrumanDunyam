@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Business.Utilities.Results;
 using Entity.Concrete;
 using Microsoft.AspNetCore.Http;
 
@@ -6,11 +7,11 @@ namespace Business.Abstract
 {
     public interface IImageService
     {
-        void Upload(IFormFile file, Image image);
-        void Update(IFormFile file, Image image);
-        void Delete(Image image);
-        List<Image> GetAll();
-        Image Get(int id);
-        List<Image> GetByProductId(int productId);
+        Result Upload(IFormFile file, Image image);
+        Result Update(IFormFile file, Image image);
+        Result Delete(Image image);
+        DataResult<List<Image>> GetAll();
+        DataResult<Image> Get(int id);
+        DataResult<List<Image>> GetByProductId(int productId);
     }
 }

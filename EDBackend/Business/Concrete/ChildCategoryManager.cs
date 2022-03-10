@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Business.Abstract;
+using Business.Utilities.Results;
 using DataAccess.Abstract;
 using Entity.Concrete;
 
@@ -14,29 +15,32 @@ namespace Business.Concrete
             _childCategoryDal = childCategoryDal;
         }
 
-        public void Add(ChildCategory entity)
+        public Result Add(ChildCategory entity)
         {
             _childCategoryDal.Add(entity);
+            return new SuccessResult();
         }
 
-        public void Delete(ChildCategory entity)
+        public Result Delete(ChildCategory entity)
         {
             _childCategoryDal.Delete(entity);
+            return new SuccessResult();
         }
 
-        public ChildCategory Get(int id)
+        public DataResult<ChildCategory> Get(int id)
         {
-            return _childCategoryDal.Get(x=>x.ChildCategoryId == id);
+            return new SuccessDataResult<ChildCategory>(_childCategoryDal.Get(x=>x.ChildCategoryId == id));
         }
 
-        public List<ChildCategory> GetAll()
+        public DataResult<List<ChildCategory>> GetAll()
         {
-            return _childCategoryDal.GetAll();
+            return  new SuccessDataResult<List<ChildCategory>>(_childCategoryDal.GetAll());
         }
 
-        public void Update(ChildCategory entity)
+        public Result Update(ChildCategory entity)
         {
             _childCategoryDal.Update(entity);
+            return new SuccessResult();
         }
     }
 }

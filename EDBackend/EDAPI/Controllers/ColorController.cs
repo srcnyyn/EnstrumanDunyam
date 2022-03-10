@@ -19,71 +19,58 @@ namespace EDAPI.Controller
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            Color result = new Color();
-            try
+
+            var result = _colorService.Get(id);
+            if (result.Success)
             {
-                result = _colorService.Get(id);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
+            return BadRequest(result);
 
         }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            List<Color> result = new List<Color>();
-            try
+            var result = _colorService.GetAll();
+            if (result.Success)
             {
-                result = _colorService.GetAll();
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
+            return BadRequest(result);
 
         }
         [HttpPost("add")]
         public IActionResult Add(Color color)
         {
-            try
+            var result = _colorService.Add(color);
+            if (result.Success)
             {
-                _colorService.Add(color);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
+
         }
         [HttpPut("update")]
         public IActionResult Update(Color color)
         {
-            try
+
+            var result = _colorService.Update(color);
+            if (result.Success)
             {
-                _colorService.Update(color);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
         [HttpDelete("delete")]
         public IActionResult Delete(Color color)
         {
-            try
+
+            var result = _colorService.Delete(color);
+            if (result.Success)
             {
-                _colorService.Delete(color);
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
     }
 }

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\ConsoleUI\\ConsoleUI.csproj": {}
+    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\consoleui\\ConsoleUI.csproj": {}
   },
   "projects": {
     "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Business\\Business.csproj": {
@@ -47,6 +47,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.6, )"
+            },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.2.2, )"
@@ -71,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\ConsoleUI\\ConsoleUI.csproj": {
+    "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\consoleui\\ConsoleUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\ConsoleUI\\ConsoleUI.csproj",
+        "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\consoleui\\ConsoleUI.csproj",
         "projectName": "ConsoleUI",
-        "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\ConsoleUI\\ConsoleUI.csproj",
+        "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\consoleui\\ConsoleUI.csproj",
         "packagesPath": "C:\\Users\\serca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\ConsoleUI\\obj\\",
+        "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\consoleui\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\serca\\AppData\\Roaming\\NuGet\\NuGet.Config",

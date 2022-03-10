@@ -19,71 +19,52 @@ namespace EDAPI.Controller
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            Brand result = new Brand();
-            try
+            var result = _brandService.Get(id);
+            if (result.Success)
             {
-                result = _brandService.Get(id);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
-
+            return BadRequest(result);
         }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            List<Brand> result = new List<Brand>();
-            try
+            var result = _brandService.GetAll();
+            if (result.Success)
             {
-                result = _brandService.GetAll();
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
-
+            return BadRequest(result);
         }
         [HttpPost("add")]
         public IActionResult Add(Brand brand)
         {
-            try
+            var result = _brandService.Add(brand);
+            if (result.Success)
             {
-                _brandService.Add(brand);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
         [HttpPut("update")]
         public IActionResult Update(Brand brand)
         {
-            try
+            var result = _brandService.Update(brand);
+            if (result.Success)
             {
-                _brandService.Update(brand);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
         [HttpDelete("delete")]
         public IActionResult Delete(Brand brand)
         {
-            try
+            var result = _brandService.Delete(brand);
+            if (result.Success)
             {
-                _brandService.Delete(brand);
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
     }
 }

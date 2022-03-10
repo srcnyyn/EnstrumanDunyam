@@ -72,3 +72,4 @@ C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\ConsoleUI\bin\Debug\net5.0\Microsoft.Net.Http.Headers.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\consoleui\bin\Debug\net5.0\FluentValidation.dll

@@ -9,9 +9,9 @@ namespace EDAPI.Controller
     [ApiController]
     [Route("[controller]")]
 
-    public class ChildCategoryController:ControllerBase
+    public class ChildCategoryController : ControllerBase
     {
-         IChildCategoryService _childCategoryService;
+        IChildCategoryService _childCategoryService;
 
         public ChildCategoryController(IChildCategoryService childCategoryService)
         {
@@ -21,73 +21,54 @@ namespace EDAPI.Controller
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            ChildCategory childCategory = new();
-            try
+            var result = _childCategoryService.Get(id);
+            if (result.Success)
             {
-                childCategory = _childCategoryService.Get(id);
+                return Ok(result);
             }
-
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(childCategory);
+            return BadRequest(result);
 
         }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            List<ChildCategory> childCategories = new();
-            try
+            var result = _childCategoryService.GetAll();
+            if (result.Success)
             {
-                childCategories = _childCategoryService.GetAll();
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(childCategories);
+            return BadRequest(result);
         }
         [HttpPost("add")]
         public IActionResult Add(ChildCategory childCategory)
         {
-            try
+            var result = _childCategoryService.Add(childCategory);
+            if (result.Success)
             {
-                _childCategoryService.Add(childCategory);
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
         [HttpDelete("delete")]
         public IActionResult Delete(ChildCategory childCategory)
         {
-            try
+            var result = _childCategoryService.Delete(childCategory);
+            if (result.Success)
             {
-                _childCategoryService.Delete(childCategory);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
         [HttpPut("update")]
         public IActionResult Update(ChildCategory childCategory)
         {
-            try
+            var result = _childCategoryService.Update(childCategory);
+            if (result.Success)
             {
-                _childCategoryService.Update(childCategory);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);                
-            }
-            return Ok();
+            return BadRequest(result);
         }
+
     }
-    
 }

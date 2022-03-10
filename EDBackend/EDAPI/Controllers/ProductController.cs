@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Business.Abstract;
+using Business.ValidationRules;
 using Entity.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EDAPI.Controller
@@ -21,132 +23,105 @@ namespace EDAPI.Controller
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            List<Product> result = new List<Product>();
-            try
-            {
-                result = _productService.GetAll();
 
-            }
-            catch (Exception ex)
+            var result = _productService.GetAll();
+            if (result.Success)
             {
-
-                return BadRequest(ex);
+                return Ok(result);
             }
-            return Ok(result);
+            return BadRequest(result);
 
         }
         [HttpGet("getbybrandid")]
         public IActionResult GetByBrandId(int id)
         {
-            List<Product> result = new List<Product>();
-            try
-            {
-                result = _productService.GetByBrandId(id);
-            }
-            catch (Exception ex)
-            {
 
-                return BadRequest(ex);
+            var result = _productService.GetByBrandId(id);
+            if (result.Success)
+            {
+                return Ok(result);
             }
-            return Ok(result);
+            return BadRequest(result);
         }
         [HttpGet("getbycategoryid")]
         public IActionResult GetByCategoryId(int id)
         {
-            List<Product> result = new List<Product>();
-            try
-            {
-                result = _productService.GetByCategoryId(id);
-            }
-            catch (Exception ex)
-            {
 
-                return BadRequest(ex);
+            var result = _productService.GetByCategoryId(id);
+            if (result.Success)
+            {
+                return Ok(result);
             }
-            return Ok(result);
+            return BadRequest(result);
         }
         [HttpGet("getbychildcategoryid")]
         public IActionResult GetByChildCategoryId(int id)
         {
-            List<Product> result = new List<Product>();
-            try
+
+            var result = _productService.GetByChildCategoryId(id);
+            if (result.Success)
             {
-                result = _productService.GetByChildCategoryId(id);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
+            return BadRequest(result);
         }
         [HttpGet("getbycolorid")]
         public IActionResult GetByColorId(int id)
         {
-            List<Product> result = new List<Product>();
-            try
+
+            var result = _productService.GetByColorId(id);
+            if (result.Success)
             {
-                result = _productService.GetByColorId(id);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
+            return BadRequest(result);
         }
         [HttpGet("getbyproductid")]
         public IActionResult GetByProductId(int id)
         {
-            Product result = new Product();
-            try
+            var result = _productService.GetByProductId(id);
+            if (result.Success)
             {
-                result = _productService.GetByProductId(id);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok(result);
+            return BadRequest(result);
         }
         [HttpPost("add")]
         public IActionResult Add(Product product)
         {
-            try
+
+            var result = _productService.Add(product);
+            if (result.Success)
             {
-                _productService.Add(product);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
+
+
+
         }
         [HttpDelete("delete")]
         public IActionResult Delete(Product product)
         {
-            try
+
+            var result = _productService.Delete(product);
+            if (result.Success)
             {
-                //Product deletedProduct = new Product();
-                //deletedProduct = _productService.GetByProductId(id);
-                _productService.Delete(product);
+                return Ok(result);
             }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
         }
         [HttpPut("update")]
         public IActionResult Update(Product product)
         {
-            try
+
+            var result = _productService.Update(product);
+            if (result.Success)
             {
-                _productService.Update(product);
+                return Ok(result);
             }
-            catch(Exception ex)
-            {
-                return BadRequest(ex);
-            }
-            return Ok();
+            return BadRequest(result);
+
         }
     }
 }

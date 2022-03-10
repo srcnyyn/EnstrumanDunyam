@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Business.Abstract;
+using Business.Utilities.Results;
 using DataAccess.Abstract;
 using Entity.Concrete;
 
@@ -14,29 +15,32 @@ namespace Business.Concrete
             _colorDal=colorDal;  
         }
 
-        public void Add(Color entity)
+        public Result Add(Color entity)
         {
             _colorDal.Add(entity);
+            return new SuccessResult();
         }
 
-        public void Delete(Color entity)
+        public Result Delete(Color entity)
         {
             _colorDal.Delete(entity);
+            return new SuccessResult();
         }
 
-        public Color Get(int id)
+        public DataResult<Color> Get(int id)
         {
-            return _colorDal.Get(x=>x.ColorId==id);
+            return new SuccessDataResult<Color>(_colorDal.Get(x=>x.ColorId==id));
         }
 
-        public List<Color> GetAll()
+        public DataResult<List<Color>> GetAll()
         {
-            return _colorDal.GetAll();
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll());
         }
 
-        public void Update(Color entity)
+        public Result Update(Color entity)
         {
             _colorDal.Update(entity);
+            return new SuccessResult();
         }
     }
 }

@@ -2,8 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Business.Abstract;
+using Business.ValidationRules;
 using DataAccess.Abstract;
 using Entity.Concrete;
+using FluentValidation.Results;
+using FluentValidation;
+using Business.Utilities.Results;
 
 namespace Business.Concrete
 {
@@ -20,27 +24,30 @@ namespace Business.Concrete
             _childCategoryDal = childCategoryDal;
         }
 
-        public void Add(Product entity)
+        public Result Add(Product entity)
         {
-            _productDal.Add(entity);
+            
+                _productDal.Add(entity);
+                return new SuccessResult();
         }
 
-        public void Delete(Product entity)
+        public Result Delete(Product entity)
         {
             _productDal.Delete(entity);
+            return new SuccessResult();
         }
 
-        public List<Product> GetAll()
+        public DataResult<List<Product>> GetAll()
         {
-            return _productDal.GetAll();
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll());
         }
 
-        public List<Product> GetByBrandId(int id)
+        public DataResult<List<Product>> GetByBrandId(int id)
         {
-            return _productDal.GetAll(x => x.BrandId == id);
+            return  new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.BrandId == id));
         }
 
-        public List<Product> GetByCategoryId(int id)
+        public DataResult<List<Product>> GetByCategoryId(int id)
         {
             var category = _categoryDal.Get(x => x.CategoryId == id);
             var chCat = _childCategoryDal.GetAll().Where(x => x.CategoryId == category.CategoryId).ToList();
@@ -51,32 +58,33 @@ namespace Business.Concrete
                 foreach (var product in childListProduct)
                 {
 
-                productList.Add(product);
+                    productList.Add(product);
                 }
 
             }
-            return productList;
+            return new SuccessDataResult<List<Product>>(productList);
 
         }
 
-        public List<Product> GetByChildCategoryId(int id)
+        public DataResult<List<Product>> GetByChildCategoryId(int id)
         {
-            return _productDal.GetAll(x => x.ChildCategoryId == id);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.ChildCategoryId == id));
         }
 
-        public List<Product> GetByColorId(int id)
+        public DataResult<List<Product>> GetByColorId(int id)
         {
-            return _productDal.GetAll(x=>x.ColorId == id);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.ColorId == id));
         }
 
-        public Product GetByProductId(int id)
+        public DataResult<Product> GetByProductId(int id)
         {
-            return _productDal.Get(x=>x.ProductId==id);
+            return new SuccessDataResult<Product>(_productDal.Get(x => x.ProductId == id));
         }
 
-        public void Update(Product entity)
+        public Result Update(Product entity)
         {
             _productDal.Update(entity);
+            return new SuccessResult();
         }
     }
 }

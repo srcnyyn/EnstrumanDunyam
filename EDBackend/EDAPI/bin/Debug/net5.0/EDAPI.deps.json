@@ -328,6 +328,17 @@
           "EDAPI.dll": {}
         }
       },
+      "FluentValidation/10.3.6": {
+        "runtime": {
+          "lib/net5.0/FluentValidation.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "10.3.6.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/FluentValidation.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Http/2.2.2": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -1369,6 +1380,7 @@
         "dependencies": {
           "DataAccess": "1.0.0",
           "Entity": "1.0.0",
+          "FluentValidation": "10.3.6",
           "Microsoft.AspNetCore.Http": "2.2.2"
         },
         "runtime": {
@@ -3104,6 +3116,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FluentValidation/10.3.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iMd370ZDx6ydm8t7bIFdRbSKX0e42lpvCtifUSbTSXOk5iKjmgl7HU0PXBhIWQAyIRi3gCwfMI9luj8H6K+byw==",
+      "path": "fluentvalidation/10.3.6",
+      "hashPath": "fluentvalidation.10.3.6.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http/2.2.2": {
       "type": "package",
