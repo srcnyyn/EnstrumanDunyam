@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
 using Business.Abstract;
-using Business.ValidationRules;
-using Entity.Concrete;
-using FluentValidation.Results;
+using DataAccess.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EDAPI.Controller

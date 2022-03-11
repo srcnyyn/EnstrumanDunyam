@@ -1,4 +1,4 @@
-using Entity.Concrete;
+using DataAccess.Entities.Concrete;
 using FluentValidation;
 namespace Business.ValidationRules
 

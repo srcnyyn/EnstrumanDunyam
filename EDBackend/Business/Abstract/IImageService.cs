@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Business.Utilities.Results;
-using Entity.Concrete;
+using DataAccess.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 
 namespace Business.Abstract

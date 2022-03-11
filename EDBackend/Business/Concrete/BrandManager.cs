@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Business.Abstract;
 using Business.Utilities.Results;
 using DataAccess.Abstract;
-using Entity.Concrete;
+using DataAccess.Entities.Concrete;
 
 namespace Business.Concrete
 {
@@ -31,7 +31,7 @@ namespace Business.Concrete
 
         public DataResult<Brand> Get(int id)
         {
-            return new SuccessDataResult<Brand>(_brandDal.Get(x=>x.BrandId==id));
+            return new SuccessDataResult<Brand>(_brandDal.Get(x=>x.Id==id));
         }
 
         public DataResult<List<Brand>> GetAll()

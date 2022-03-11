@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Business.Utilities;
 using Business.Utilities.Results;
-using Entity.Concrete;
+using DataAccess.Entities.Concrete;
 
 namespace Business.Abstract
 {

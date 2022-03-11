@@ -3,7 +3,7 @@ using System.Linq;
 using Business.Abstract;
 using Business.Utilities.Results;
 using DataAccess.Abstract;
-using Entity.Concrete;
+using DataAccess.Entities.Concrete;
 
 namespace Business.Concrete
 {
@@ -29,7 +29,7 @@ namespace Business.Concrete
 
         public DataResult<Color> Get(int id)
         {
-            return new SuccessDataResult<Color>(_colorDal.Get(x=>x.ColorId==id));
+            return new SuccessDataResult<Color>(_colorDal.Get(x=>x.Id==id));
         }
 
         public DataResult<List<Color>> GetAll()

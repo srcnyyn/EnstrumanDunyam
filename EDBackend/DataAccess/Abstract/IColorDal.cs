@@ -1,5 +1,5 @@
+using DataAccess.Entities.Concrete;
 using DataAccess.Repositories;
-using Entity.Concrete;
 
 namespace DataAccess.Abstract
 {

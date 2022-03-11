@@ -4,10 +4,10 @@ using System.Linq;
 using Business.Abstract;
 using Business.ValidationRules;
 using DataAccess.Abstract;
-using Entity.Concrete;
 using FluentValidation.Results;
 using FluentValidation;
 using Business.Utilities.Results;
+using DataAccess.Entities.Concrete;
 
 namespace Business.Concrete
 {
@@ -49,12 +49,12 @@ namespace Business.Concrete
 
         public DataResult<List<Product>> GetByCategoryId(int id)
         {
-            var category = _categoryDal.Get(x => x.CategoryId == id);
-            var chCat = _childCategoryDal.GetAll().Where(x => x.CategoryId == category.CategoryId).ToList();
+            var category = _categoryDal.Get(x => x.Id == id);
+            var chCats = _childCategoryDal.GetAll().Where(x => x.CategoryId == category.Id).ToList();
             List<Product> productList = new List<Product>();
-            foreach (var item in chCat)
+            foreach (var chCat in chCats)
             {
-                List<Product> childListProduct = _productDal.GetAll(x => x.ChildCategoryId == item.ChildCategoryId).ToList();
+                List<Product> childListProduct = _productDal.GetAll(x => x.ChildCategoryId == chCat.Id).ToList();
                 foreach (var product in childListProduct)
                 {
 
@@ -78,7 +78,7 @@ namespace Business.Concrete
 
         public DataResult<Product> GetByProductId(int id)
         {
-            return new SuccessDataResult<Product>(_productDal.Get(x => x.ProductId == id));
+            return new SuccessDataResult<Product>(_productDal.Get(x => x.Id == id));
         }
 
         public Result Update(Product entity)

@@ -1,7 +1,5 @@
-using System;
-using System.Collections.Generic;
 using Business.Abstract;
-using Entity.Concrete;
+using DataAccess.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EDAPI.Controller

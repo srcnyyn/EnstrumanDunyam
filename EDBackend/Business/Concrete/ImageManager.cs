@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using Business.Abstract;
 using Business.Utilities;
 using Business.Utilities.Results;
 using DataAccess.Abstract;
-using Entity.Concrete;
+using DataAccess.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 
 namespace Business.Concrete
@@ -28,7 +26,7 @@ namespace Business.Concrete
 
         public DataResult<Image> Get(int id)
         {
-            return new SuccessDataResult<Image>(_imageDal.Get(i=>i.ImageId == id));
+            return new SuccessDataResult<Image>(_imageDal.Get(i=>i.Id == id));
         }
 
         public DataResult<List<Image>> GetAll()
