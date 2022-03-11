@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DataAccess.Entities.BaseEntities;
 
 namespace DataAccess.Entities.Concrete

@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using DataAccess.Entities.BaseEntities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Repositories
 {
-    public class EntityRepositoryDal<TEntity, TContext> : IEntityRepositoryDal<TEntity> where TEntity : class, new() where TContext : DbContext, new()
+    public class EntityRepositoryDal<TEntity, TContext> : IEntityRepositoryDal<TEntity> where TEntity :BaseEntity, new() where TContext : DbContext, new()
     {
 
         public void Add(TEntity entity)
@@ -14,7 +15,7 @@ namespace DataAccess.Repositories
             using (EdDBContext context = new EdDBContext())
             {
                 var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
+                addedEntity.State=EntityState.Added;
                 context.SaveChanges();
             }
         }

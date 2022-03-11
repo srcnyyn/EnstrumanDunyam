@@ -1,14 +1,11 @@
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\bin\Debug\net5.0\DataAccess.dll
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\bin\Debug\net5.0\DataAccess.pdb
-C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\bin\Debug\net5.0\entity.dll
-C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\bin\Debug\net5.0\entity.pdb
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
-C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\DataAccess.dll
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\DataAccess\obj\Debug\net5.0\DataAccess.pdb

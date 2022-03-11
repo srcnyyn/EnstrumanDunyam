@@ -13,6 +13,7 @@ namespace Business.Concrete
 {
     public class ProductManager : IProductService
     {
+        
         IProductDal _productDal;
         ICategoryDal _categoryDal;
         IChildCategoryDal _childCategoryDal;
@@ -22,29 +23,43 @@ namespace Business.Concrete
             _productDal = productDal;
             _categoryDal = categoryDal;
             _childCategoryDal = childCategoryDal;
+           
         }
 
         public Result Add(Product entity)
         {
-            
-                _productDal.Add(entity);
-                return new SuccessResult();
+            ProductValidation validations = new();
+             var result = validations.Validate(entity);
+             if (!result.IsValid)
+             {
+                 return new ErrorResult(result.ToString(" ~ "));
+             }
+            _productDal.Add(entity);
+            return new SuccessResult();
+
         }
 
         public Result Delete(Product entity)
         {
+
             _productDal.Delete(entity);
             return new SuccessResult();
+
         }
 
         public DataResult<List<Product>> GetAll()
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll());
+            var data = _productDal.GetAll();
+            if (data==null)
+            {
+                return new ErrorDataresult<List<Product>>("data boş");
+            }
+            return new SuccessDataResult<List<Product>>(data,"data dolu");
         }
 
         public DataResult<List<Product>> GetByBrandId(int id)
         {
-            return  new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.BrandId == id));
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.BrandId == id));
         }
 
         public DataResult<List<Product>> GetByCategoryId(int id)

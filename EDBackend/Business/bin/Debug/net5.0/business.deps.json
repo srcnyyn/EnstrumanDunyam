@@ -9,7 +9,6 @@
       "Business/1.0.0": {
         "dependencies": {
           "DataAccess": "1.0.0",
-          "Entity": "1.0.0",
           "FluentValidation": "10.3.6",
           "Microsoft.AspNetCore.Http": "2.2.2"
         },
@@ -1117,17 +1116,11 @@
       },
       "DataAccess/1.0.0": {
         "dependencies": {
-          "Entity": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.0"
         },
         "runtime": {
           "DataAccess.dll": {}
-        }
-      },
-      "Entity/1.0.0": {
-        "runtime": {
-          "Entity.dll": {}
         }
       }
     }
@@ -1860,11 +1853,6 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "DataAccess/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Entity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

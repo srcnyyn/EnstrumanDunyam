@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using DataAccess.Entities.BaseEntities;
 
 namespace DataAccess.Repositories 
 {
-    public interface IEntityRepositoryDal<T> where T: class,new() 
+    public interface IEntityRepositoryDal<T> where T: BaseEntity,new() 
     {
         void Add(T entity);
         void Delete(T entity);

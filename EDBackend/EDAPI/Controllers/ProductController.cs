@@ -1,4 +1,5 @@
 using Business.Abstract;
+using DataAccess.Abstract;
 using DataAccess.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,11 +10,13 @@ namespace EDAPI.Controller
 
     public class ProductController : ControllerBase
     {
+       
         IProductService _productService;
 
         public ProductController(IProductService productService)
         {
             _productService = productService;
+            
         }
 
         [HttpGet("getall")]

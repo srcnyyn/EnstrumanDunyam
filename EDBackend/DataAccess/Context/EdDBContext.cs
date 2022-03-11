@@ -8,7 +8,7 @@ namespace DataAccess.Repositories
         
       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
       {
-        optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDb;Database=EdDB;Trusted_Connection=true;");
+        optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=EdDB;Trusted_Connection=true;");
       }
         
         
