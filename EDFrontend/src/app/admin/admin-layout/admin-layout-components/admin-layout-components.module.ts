@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AdminFooterComponent } from './admin-footer/admin-footer.component';
 import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import {MatListModule} from '@angular/material/list';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,9 +13,12 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
     AdminFooterComponent,
     AdminSidebarComponent,
     AdminHeaderComponent
+    
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    MatListModule
   ],
   exports:[
     AdminFooterComponent,
