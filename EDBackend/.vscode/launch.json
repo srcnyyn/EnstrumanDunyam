@@ -2,17 +2,8 @@
     "version": "0.2.0",
     "configurations": [
         
-        {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}/ConsoleUI/bin/Debug/net5.0/ConsoleUI.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}/ConsoleUI",
-            "console": "integratedTerminal",
-            "stopAtEntry": false
-        },
+        
+        
         {
             // Use IntelliSense to find out which attributes exist for C# debugging
             // Use hover for the description of the existing attributes

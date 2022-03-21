@@ -7,7 +7,7 @@ namespace Business.Abstract
 {
     public interface IColorService:IServiceRepository<Color>
     {
-        DataResult<List<Color>> GetAll();
+        
         DataResult<Color> Get(int id);
     }
 }

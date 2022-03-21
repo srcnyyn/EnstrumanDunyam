@@ -14,6 +14,6 @@ namespace Business.Abstract
         DataResult<List<Product>> GetByColorId(int id);
         DataResult<List<Product>> GetByBrandId(int id);
 
-        DataResult<List<Product>> GetAll();
+      
     }
 }

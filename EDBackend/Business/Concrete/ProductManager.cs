@@ -35,7 +35,7 @@ namespace Business.Concrete
                  return new ErrorResult(result.ToString(" ~ "));
              }
             _productDal.Add(entity);
-            return new SuccessResult();
+            return new SuccessResult(" Ekleme İşlemi Başarılı");
 
         }
 

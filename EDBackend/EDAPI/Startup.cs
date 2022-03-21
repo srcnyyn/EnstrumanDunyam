@@ -33,18 +33,25 @@ namespace EDAPI
         {
 
             services.AddControllers();
+
             services.AddSingleton<IProductService,ProductManager>();
             services.AddSingleton<IProductDal,ProductDal>();
+
             services.AddSingleton<ICategoryService,CategoryManager>();
             services.AddSingleton<ICategoryDal,CategoryDal>();
+
             services.AddSingleton<IChildCategoryService,ChildCategoryManager>();
             services.AddSingleton<IChildCategoryDal,ChildCategoryDal>();
+
             services.AddSingleton<IColorService,ColorManager>();
             services.AddSingleton<IColorDal,ColorDal>();
+
             services.AddSingleton<IBrandService,BrandManager>();
             services.AddSingleton<IBrandDal,BrandDal>();
+
             services.AddSingleton<IImageService,ImageManager>();
             services.AddSingleton<IImageDal,ImageDal>();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EDAPI", Version = "v1" });
