@@ -43,5 +43,8 @@ namespace Business.Concrete
             _categoryDal.Update(entity);
              return new SuccessResult();
         }
+
+        
+    
     }
 }

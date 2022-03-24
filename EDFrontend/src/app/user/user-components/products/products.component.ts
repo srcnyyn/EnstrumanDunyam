@@ -12,6 +12,7 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
+    if(false){}
     this.getAll();
     
   }
@@ -22,5 +23,7 @@ export class ProductsComponent implements OnInit {
   getByBrandId(id:number){
     this.productService.getByBrandId(id).subscribe(res=>this.products=res.data)
   }
-  getByCategoryId(id:number)
+  getByCategoryId(id:number){
+    this.productService.getByCategoryId(id).subscribe(res=>this.products=res.data)
+  }
 }

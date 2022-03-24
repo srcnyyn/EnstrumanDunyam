@@ -10,7 +10,7 @@ import { UserModule } from './user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './nav/nav.component';
-import { ProductsComponent } from './user/user-components/products/products.component';
+import { CategoriesComponent } from './user/user-components/categories/categories.component';
 
 
 @NgModule({
