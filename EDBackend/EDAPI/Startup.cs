@@ -32,31 +32,33 @@ namespace EDAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+            services.AddCors();
             services.AddControllers();
+            services.AddSingleton<IProductService, ProductManager>();
+            services.AddSingleton<IProductDal, ProductDal>();
 
-            services.AddSingleton<IProductService,ProductManager>();
-            services.AddSingleton<IProductDal,ProductDal>();
+            services.AddSingleton<ICategoryService, CategoryManager>();
+            services.AddSingleton<ICategoryDal, CategoryDal>();
 
-            services.AddSingleton<ICategoryService,CategoryManager>();
-            services.AddSingleton<ICategoryDal,CategoryDal>();
+            services.AddSingleton<IChildCategoryService, ChildCategoryManager>();
+            services.AddSingleton<IChildCategoryDal, ChildCategoryDal>();
 
-            services.AddSingleton<IChildCategoryService,ChildCategoryManager>();
-            services.AddSingleton<IChildCategoryDal,ChildCategoryDal>();
+            services.AddSingleton<IColorService, ColorManager>();
+            services.AddSingleton<IColorDal, ColorDal>();
 
-            services.AddSingleton<IColorService,ColorManager>();
-            services.AddSingleton<IColorDal,ColorDal>();
+            services.AddSingleton<IBrandService, BrandManager>();
+            services.AddSingleton<IBrandDal, BrandDal>();
 
-            services.AddSingleton<IBrandService,BrandManager>();
-            services.AddSingleton<IBrandDal,BrandDal>();
+            services.AddSingleton<IImageService, ImageManager>();
+            services.AddSingleton<IImageDal, ImageDal>();
 
-            services.AddSingleton<IImageService,ImageManager>();
-            services.AddSingleton<IImageDal,ImageDal>();
-            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EDAPI", Version = "v1" });
             });
-            
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +70,8 @@ namespace EDAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EDAPI v1"));
             }
+            
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
             app.UseHttpsRedirection();
 

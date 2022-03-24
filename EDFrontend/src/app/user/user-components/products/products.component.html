@@ -1,1 +1,7 @@
-<p>products works!</p>
+<div class="container">
+  <table class="table">
+    <tr *ngFor="let product of products">
+      <td>{{ product.productName }}</td>
+    </tr>
+  </table>
+</div>

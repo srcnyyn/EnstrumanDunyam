@@ -13,7 +13,8 @@ const routes: Routes = [
   ] },
   {path:'', component:HomeComponent },
   {path:'carts', loadChildren:() => import('./user/user-components/carts/carts.module').then(module=>module.CartsModule)},
-  {path:'products', loadChildren:()=> import('./user/user-components/products/products.module').then(module=>module.ProductsModule)}
+  {path:'product', loadChildren:()=> import('./user/user-components/products/products.module').then(module=>module.ProductsModule)},
+  {path:'categories',loadChildren:()=> import('./user/user-components/categories/categories.module').then(module=>module.CategoriesModule)}
 ];
 
 @NgModule({
