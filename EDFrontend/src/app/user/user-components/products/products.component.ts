@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/products';
 import { ProductService } from '../../user-services/product.service';
 
@@ -12,7 +13,7 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    if(false){}
+   
     this.getAll();
     
   }

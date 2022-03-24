@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/models/category';
-import { ResponseModel } from 'src/app/models/responseModel';
+import { Product } from 'src/app/models/products';
 import { CategoryService } from '../../user-services/category.service';
-import { CategoriesComponent } from '../categories/categories.component';
+import { ProductService } from '../../user-services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -12,26 +12,31 @@ import { CategoriesComponent } from '../categories/categories.component';
 })
 export class HomeComponent implements OnInit {
 categories:Category[]=[];
+
+products:Product[]=[];
+
 currentCategory:Category={id:0,categoryName:''};
+
   constructor(
-    private categoryService:CategoryService) { }
+    private categoryService:CategoryService,
+    private productService:ProductService,
+    private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-this.listCategory();
+    
+      
+    
+        this.listProducts()
+     
+        this.listCategory()
   }
 listCategory(){
   return this.categoryService.getCategories().subscribe(res=>this.categories=res.data)
 }
-setCurrentCategory(category:Category){
-  this.currentCategory=category;
-}
-getCurrentCategory(category:Category){
-  if(category == this.currentCategory){
 
-    return "row list-group item active"
-  }else{
 
-    return "row list-group-active"
-  }
+listProducts(){
+  return this.productService.getAll().subscribe(res=>this.products=res.data)
 }
+
 }

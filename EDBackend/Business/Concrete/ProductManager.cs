@@ -64,20 +64,8 @@ namespace Business.Concrete
 
         public DataResult<List<Product>> GetByCategoryId(int id)
         {
-            var category = _categoryDal.Get(x => x.Id == id);
-            var chCats = _childCategoryDal.GetAll().Where(x => x.CategoryId == category.Id).ToList();
-            List<Product> productList = new List<Product>();
-            foreach (var chCat in chCats)
-            {
-                List<Product> childListProduct = _productDal.GetAll(x => x.ChildCategoryId == chCat.Id).ToList();
-                foreach (var product in childListProduct)
-                {
-
-                    productList.Add(product);
-                }
-
-            }
-            return new SuccessDataResult<List<Product>>(productList);
+            
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(x=>x.CategoryId==id));
 
         }
 
