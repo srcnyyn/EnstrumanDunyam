@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Business.Utilities;
 using Business.Utilities.Results;
 using DataAccess.Entities.Concrete;
+using DataAccess.Entities.Dtos;
 
 namespace Business.Abstract
 {
@@ -13,6 +14,8 @@ namespace Business.Abstract
         DataResult<List<Product>> GetByChildCategoryId(int id);
         DataResult<List<Product>> GetByColorId(int id);
         DataResult<List<Product>> GetByBrandId(int id);
+
+        DataResult<List<ProductDto>> GetByDto();
 
       
     }

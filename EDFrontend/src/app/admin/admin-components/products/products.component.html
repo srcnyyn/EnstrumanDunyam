@@ -1,1 +1,39 @@
-<p>Product</p>
+<div>
+    <h2>Product Yükle</h2>
+    ProductName :
+    <br>
+    <input type="text" #txtproductName />
+    
+    <br>
+    
+<input class="form-control" #txtbrandId list="datalistOptions" id="exampleDataList" placeholder="Marka Seçiniz">
+<datalist id="datalistOptions">
+  <option *ngFor="let brand  of brands" value="{{brand.brandName}}">
+  </option>
+</datalist>
+   
+    <br> Renk &nbsp; :
+    <br>
+    <input type="number" #txtcolorId />
+    <br> Alt Kategori &nbsp; :
+    <br>
+    <input type="number" #txtchildCategoryId />
+    <br> Kategori &nbsp; :
+    <br>
+    <input type="number" #txtcategoryId />
+ 
+      
+     
+    <br> Fiyat &nbsp; :
+    <br>
+    <input type="number" #txtunitPrice />
+    <br> Adet &nbsp; :
+    <br>
+    <input type="number" #txtquantity />
+
+    <button (click)="add(txtproductName, txtbrandId, txtcolorId,txtchildCategoryId,txtcategoryId,txtunitPrice,txtquantity)">Ekle</button>
+  </div>
+  
+  
+  
+  

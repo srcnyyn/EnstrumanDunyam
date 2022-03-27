@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Business.Abstract;
+using Business.Utilities.Results;
 using Business.ValidationRules;
 using DataAccess.Abstract;
-using FluentValidation.Results;
-using FluentValidation;
-using Business.Utilities.Results;
 using DataAccess.Entities.Concrete;
+using DataAccess.Entities.Dtos;
+using System.Collections.Generic;
 
 namespace Business.Concrete
 {
@@ -77,6 +74,11 @@ namespace Business.Concrete
         public DataResult<List<Product>> GetByColorId(int id)
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.ColorId == id));
+        }
+
+        public DataResult<List<ProductDto>> GetByDto()
+        { 
+            return new SuccessDataResult<List<ProductDto>>(_productDal.GetProductDetails());
         }
 
         public DataResult<Product> GetByProductId(int id)

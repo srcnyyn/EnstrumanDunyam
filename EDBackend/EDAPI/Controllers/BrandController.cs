@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EDAPI.Controller
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class BrandController : ControllerBase
     {
         IBrandService _brandService;

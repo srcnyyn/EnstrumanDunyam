@@ -11,27 +11,22 @@ import { ProductService } from '../../user-services/product.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-categories:Category[]=[];
 
+categories:Category[]=[];
 products:Product[]=[];
 
-currentCategory:Category={id:0,categoryName:''};
+
 
   constructor(
     private categoryService:CategoryService,
-    private productService:ProductService,
-    private activatedRoute:ActivatedRoute) { }
+    private productService:ProductService) { }
 
   ngOnInit(): void {
-    
-      
-    
         this.listProducts()
-     
         this.listCategory()
   }
 listCategory(){
-  return this.categoryService.getCategories().subscribe(res=>this.categories=res.data)
+  return this.categoryService.getAll().subscribe(res=>this.categories=res.data)
 }
 
 

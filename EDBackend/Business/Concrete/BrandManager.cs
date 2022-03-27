@@ -39,6 +39,8 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
         }
 
+        
+
         public Result Update(Brand entity)
         {
             _brandDal.Update(entity);
@@ -46,4 +48,5 @@ namespace Business.Concrete
         }
 
     }
+    
 }

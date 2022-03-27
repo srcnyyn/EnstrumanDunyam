@@ -1,20 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Business.Abstract;
-using Business.Concrete;
-using DataAccess.Abstract;
-using DataAccess.Concrete;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace EDAPI
@@ -35,23 +24,7 @@ namespace EDAPI
 
             services.AddCors();
             services.AddControllers();
-            services.AddSingleton<IProductService, ProductManager>();
-            services.AddSingleton<IProductDal, ProductDal>();
-
-            services.AddSingleton<ICategoryService, CategoryManager>();
-            services.AddSingleton<ICategoryDal, CategoryDal>();
-
-            services.AddSingleton<IChildCategoryService, ChildCategoryManager>();
-            services.AddSingleton<IChildCategoryDal, ChildCategoryDal>();
-
-            services.AddSingleton<IColorService, ColorManager>();
-            services.AddSingleton<IColorDal, ColorDal>();
-
-            services.AddSingleton<IBrandService, BrandManager>();
-            services.AddSingleton<IBrandDal, BrandDal>();
-
-            services.AddSingleton<IImageService, ImageManager>();
-            services.AddSingleton<IImageDal, ImageDal>();
+            
 
             services.AddSwaggerGen(c =>
             {

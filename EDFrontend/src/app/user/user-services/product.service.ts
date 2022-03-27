@@ -20,7 +20,7 @@ export class ProductService {
 
   getByBrandId(id: number): Observable<ResponseModel<Product>> {
     return this.http.get<ResponseModel<Product>>(
-      this.apiUrl + '/product/getbybrandid');
+      this.apiUrl + '/product/getbybrandid?id='+id);
   }
 
   getByCategoryId(id: number): Observable<ResponseModel<Product>> {
@@ -30,18 +30,17 @@ export class ProductService {
 
   getByChildCategoryId(id: number): Observable<ResponseModel<Product>> {
     return this.http.get<ResponseModel<Product>>(
-      this.apiUrl + '/product/getbychildcategoryid'
-    );
+      this.apiUrl + '/product/getbychildcategoryid?id='+id);
   }
 
   getByColorId(id: number): Observable<ResponseModel<Product>> {
     return this.http.get<ResponseModel<Product>>(
-      this.apiUrl + '/product/getbycolorid');
+      this.apiUrl + '/product/getbycolorid?id='+id);
   }
 
   getByProductId(id:number): Observable<ResponseModel<Product>>{
     return this.http.get<ResponseModel<Product>>(
-      this.apiUrl+'/product/getbyproductid');
+      this.apiUrl+'/product/getbyproductid?id='+id);
   }
   
 }

@@ -8,6 +8,7 @@ namespace Business.Abstract
     public interface IBrandService:IServiceRepository<Brand>
     {
         DataResult<Brand> Get(int id);
+       
         
     }
 }

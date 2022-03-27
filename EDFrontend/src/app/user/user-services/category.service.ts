@@ -14,7 +14,10 @@ export class CategoryService {
     private http:HttpClient
   ) { }
 
-  getCategories():Observable<ResponseModel<Category>>{
+  getAll():Observable<ResponseModel<Category>>{
      return this.http.get<ResponseModel<Category>>(this.apiUrl+'/category/getall');
+  }
+  getById(id:number):Observable<ResponseModel<Category>>{
+    return this.http.get<ResponseModel<Category>>(this.apiUrl+'/category/getbyid?id='+id)
   }
 }
