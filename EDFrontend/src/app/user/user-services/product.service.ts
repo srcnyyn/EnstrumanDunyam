@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, ResolvedReflectiveProvider } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/models/products';
-import { ResponseModel } from 'src/app/models/responseModel';
+import { ResponseDataModel } from 'src/app/models/response-data-model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,33 +13,33 @@ export class ProductService {
     private http: HttpClient
   ) {}
 
-  getAll(): Observable<ResponseModel<Product>> {
-    return this.http.get<ResponseModel<Product>>(
+  getAll(): Observable<ResponseDataModel<Product>> {
+    return this.http.get<ResponseDataModel<Product>>(
       this.apiUrl + '/product/getall');
   }
 
-  getByBrandId(id: number): Observable<ResponseModel<Product>> {
-    return this.http.get<ResponseModel<Product>>(
+  getByBrandId(id: number): Observable<ResponseDataModel<Product>> {
+    return this.http.get<ResponseDataModel<Product>>(
       this.apiUrl + '/product/getbybrandid?id='+id);
   }
 
-  getByCategoryId(id: number): Observable<ResponseModel<Product>> {
-    return this.http.get<ResponseModel<Product>>(
+  getByCategoryId(id: number): Observable<ResponseDataModel<Product>> {
+    return this.http.get<ResponseDataModel<Product>>(
       this.apiUrl + '/product/getbycategoryid?id='+id);
   }
 
-  getByChildCategoryId(id: number): Observable<ResponseModel<Product>> {
-    return this.http.get<ResponseModel<Product>>(
+  getByChildCategoryId(id: number): Observable<ResponseDataModel<Product>> {
+    return this.http.get<ResponseDataModel<Product>>(
       this.apiUrl + '/product/getbychildcategoryid?id='+id);
   }
 
-  getByColorId(id: number): Observable<ResponseModel<Product>> {
-    return this.http.get<ResponseModel<Product>>(
+  getByColorId(id: number): Observable<ResponseDataModel<Product>> {
+    return this.http.get<ResponseDataModel<Product>>(
       this.apiUrl + '/product/getbycolorid?id='+id);
   }
 
-  getByProductId(id:number): Observable<ResponseModel<Product>>{
-    return this.http.get<ResponseModel<Product>>(
+  getByProductId(id:number): Observable<ResponseDataModel<Product>>{
+    return this.http.get<ResponseDataModel<Product>>(
       this.apiUrl+'/product/getbyproductid?id='+id);
   }
   

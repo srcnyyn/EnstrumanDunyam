@@ -10,7 +10,11 @@ import { UserModule } from './user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './nav/nav.component';
-import { CategoriesComponent } from './user/user-components/categories/categories.component';
+import {MatButtonModule} from '@angular/material/button';
+
+import { ToastrModule } from 'ngx-toastr';
+
+
 
 
 @NgModule({
@@ -26,9 +30,13 @@ import { CategoriesComponent } from './user/user-components/categories/categorie
     UserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgbModule
-
+    NgbModule,
+    MatButtonModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
+  
   
   providers: [{provide: "APIURL", useValue:"https://localhost:5001/api"}],
   bootstrap: [AppComponent]

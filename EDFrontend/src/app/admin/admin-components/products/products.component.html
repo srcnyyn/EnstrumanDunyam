@@ -1,39 +1,17 @@
-<div>
-    <h2>Product Yükle</h2>
-    ProductName :
-    <br>
-    <input type="text" #txtproductName />
-    
-    <br>
-    
-<input class="form-control" #txtbrandId list="datalistOptions" id="exampleDataList" placeholder="Marka Seçiniz">
-<datalist id="datalistOptions">
-  <option *ngFor="let brand  of brands" value="{{brand.brandName}}">
-  </option>
-</datalist>
-   
-    <br> Renk &nbsp; :
-    <br>
-    <input type="number" #txtcolorId />
-    <br> Alt Kategori &nbsp; :
-    <br>
-    <input type="number" #txtchildCategoryId />
-    <br> Kategori &nbsp; :
-    <br>
-    <input type="number" #txtcategoryId />
- 
-      
-     
-    <br> Fiyat &nbsp; :
-    <br>
-    <input type="number" #txtunitPrice />
-    <br> Adet &nbsp; :
-    <br>
-    <input type="number" #txtquantity />
+<mat-tab-group class="tab-menu">
+<mat-tab label="Tüm Ürünler">
+  <p>Ürünleri Getirme Sayfası</p>
+</mat-tab>
+<mat-tab label="Ürün Ekle">
+   <app-product-add></app-product-add>
+</mat-tab>
+<mat-tab label="Ürün Sil">
+  <p>Ürün Silme Sayfası</p>
+</mat-tab>
+<mat-tab label="Ürün Güncelle">
+   <p>Ürün Güncelleme Sayfası</p>
+</mat-tab>
+</mat-tab-group>
 
-    <button (click)="add(txtproductName, txtbrandId, txtcolorId,txtchildCategoryId,txtcategoryId,txtunitPrice,txtquantity)">Ekle</button>
-  </div>
-  
-  
-  
-  
+
+

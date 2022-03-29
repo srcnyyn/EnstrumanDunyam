@@ -1,23 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Brand } from 'src/app/models/brand';
+import { Category } from 'src/app/models/category';
 import { ResponseDataModel } from 'src/app/models/response-data-model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BrandService {
+export class CategoryService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
     private http:HttpClient
   ) { }
 
-getAll():Observable<ResponseDataModel<Brand>>{
-  return this.http.get<ResponseDataModel<Brand>>(this.apiUrl+'/brand/getall')
-}
-getById(id:number):Observable<ResponseDataModel<Brand>>{
-  return this.http.get<ResponseDataModel<Brand>>(this.apiUrl+'/brand/getbyid?id='+id)
-}
+  getAll():Observable<ResponseDataModel<Category>>{
+   return this.http.get<ResponseDataModel<Category>>(this.apiUrl+'/category/getall')
+  }
 }

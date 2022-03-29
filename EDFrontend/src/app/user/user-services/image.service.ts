@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, ResolvedReflectiveProvider } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ResponseModel } from 'src/app/models/responseModel';
 import {Image} from 'src/app/models/image';
+import { ResponseDataModel } from 'src/app/models/response-data-model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,10 @@ export class ImageService {
     private http:HttpClient
   ) { }
 
-getAll():Observable<ResponseModel<Image>>{
-  return  this.http.get<ResponseModel<Image>>(this.apiUrl+'/image/getall')
+getAll():Observable<ResponseDataModel<Image>>{
+  return  this.http.get<ResponseDataModel<Image>>(this.apiUrl+'/image/getall')
 }
-getById(id:number):Observable<ResponseModel<Image>>{
-  return this.http.get<ResponseModel<Image>>(this.apiUrl+'/image/getbyid?id='+id)
+getById(id:number):Observable<ResponseDataModel<Image>>{
+  return this.http.get<ResponseDataModel<Image>>(this.apiUrl+'/image/getbyid?id='+id)
 }
 }

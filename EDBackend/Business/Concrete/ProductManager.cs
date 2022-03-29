@@ -76,7 +76,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.ColorId == id));
         }
 
-        public DataResult<List<ProductDto>> GetByDto()
+        public DataResult<List<ProductDto>> GetProductDto()
         { 
             return new SuccessDataResult<List<ProductDto>>(_productDal.GetProductDetails());
         }

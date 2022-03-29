@@ -37,6 +37,11 @@ namespace Business.Concrete
             return  new SuccessDataResult<List<ChildCategory>>(_childCategoryDal.GetAll());
         }
 
+        public DataResult<List<ChildCategory>> GetByCategoryId(int categoryId)
+        {
+            return new SuccessDataResult<List<ChildCategory>>(_childCategoryDal.GetAll(x=>x.CategoryId==categoryId));
+        }
+
         public Result Update(ChildCategory entity)
         {
             _childCategoryDal.Update(entity);

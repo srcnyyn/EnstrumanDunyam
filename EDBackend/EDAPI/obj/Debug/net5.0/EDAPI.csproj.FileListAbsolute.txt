@@ -63,3 +63,7 @@ C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\Autofac.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\Autofac.Extras.DynamicProxy.dll
+C:\Users\serca\Desktop\Calismalar\EnstrumanDunyam\EDBackend\EDAPI\bin\Debug\net5.0\Castle.Core.dll

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from 'src/app/models/category';
-import { ResponseModel } from 'src/app/models/responseModel';
+import { ResponseDataModel } from 'src/app/models/response-data-model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,10 @@ export class CategoryService {
     private http:HttpClient
   ) { }
 
-  getAll():Observable<ResponseModel<Category>>{
-     return this.http.get<ResponseModel<Category>>(this.apiUrl+'/category/getall');
+  getAll():Observable<ResponseDataModel<Category>>{
+     return this.http.get<ResponseDataModel<Category>>(this.apiUrl+'/category/getall');
   }
-  getById(id:number):Observable<ResponseModel<Category>>{
-    return this.http.get<ResponseModel<Category>>(this.apiUrl+'/category/getbyid?id='+id)
+  getById(id:number):Observable<ResponseDataModel<Category>>{
+    return this.http.get<ResponseDataModel<Category>>(this.apiUrl+'/category/getbyid?id='+id)
   }
 }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Color } from 'src/app/models/color';
-import { ResponseModel } from 'src/app/models/responseModel';
+import { ResponseDataModel } from 'src/app/models/response-data-model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,10 @@ export class ColorService {
     @Inject('APIURL') private apiUrl:string,
     private http:HttpClient
   ) { }
-  getAll():Observable<ResponseModel<Color>>{
-    return this.http.get<ResponseModel<Color>>(this.apiUrl+'/color/getall')
+  getAll():Observable<ResponseDataModel<Color>>{
+    return this.http.get<ResponseDataModel<Color>>(this.apiUrl+'/color/getall')
   }
-  getById(id:number):Observable<ResponseModel<Color>>{
-    return this.http.get<ResponseModel<Color>>(this.apiUrl+'/color/getbyid?='+id)
+  getById(id:number):Observable<ResponseDataModel<Color>>{
+    return this.http.get<ResponseDataModel<Color>>(this.apiUrl+'/color/getbyid?='+id)
   }
 }

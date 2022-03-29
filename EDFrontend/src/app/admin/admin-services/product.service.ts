@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Brand } from 'src/app/models/brand';
 import { Product } from 'src/app/models/products';
-import { ResponseModel } from 'src/app/models/responseModel';
+import { ResponseModel } from 'src/app/models/response-model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ export class ProductService {
     private http:HttpClient
   ) { }
 
-  add(product:Product):Observable<ResponseModel<Product>>{
-    return this.http.post<ResponseModel<Product>>(this.apiUrl+'/product/add',product)
+  add(product:Product):Observable<ResponseModel>{
+    return this.http.post<ResponseModel>(this.apiUrl+'/product/add',product)
   }
   
 }

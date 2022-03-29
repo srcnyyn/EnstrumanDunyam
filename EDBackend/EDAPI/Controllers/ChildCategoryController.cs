@@ -67,6 +67,15 @@ namespace EDAPI.Controller
             }
             return BadRequest(result);
         }
+        [HttpGet("getbycategoryid")]
+        public IActionResult GetByCategoryId(int categoryId){
+            var result = _childCategoryService.GetByCategoryId(categoryId);
+             if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
     }
 }

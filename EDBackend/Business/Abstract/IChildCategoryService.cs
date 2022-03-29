@@ -8,6 +8,7 @@ namespace Business.Abstract
     public interface IChildCategoryService:IServiceRepository<ChildCategory>
     {
         DataResult<ChildCategory> Get(int id);
+        DataResult<List<ChildCategory>> GetByCategoryId(int categoryId);
         
     } 
 
