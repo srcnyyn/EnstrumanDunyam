@@ -1,23 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators,} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 
-import { BrandService } from 'src/app/admin/admin-services/brand.service';
-import { ChildCategoryService } from 'src/app/admin/admin-services/child-category.service';
-import { ColorService } from 'src/app/admin/admin-services/color.service';
-import { ProductService } from 'src/app/admin/admin-services/product.service';
-import { CategoryService } from 'src/app/user/user-services/category.service';
+import { BrandService } from '../../../../services/brand.service';
+import { ChildCategoryService } from '../../../../services/child-category.service';
+import { ColorService } from '../../../../services/color.service';
+import { CategoryService } from '../../../../services/category.service';
+import { ProductAdminService } from '../../../admin-services/product-admin.service'
 
 import { Brand } from 'src/app/models/brand';
 import { ChildCategory } from 'src/app/models/child-category';
 import { Color } from 'src/app/models/color';
 import { Category } from 'src/app/models/category';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-add',
@@ -41,7 +36,7 @@ export class ProductAddComponent implements OnInit {
     private colorService: ColorService,
     private childCategoryService: ChildCategoryService,
     private categoryService: CategoryService,
-    private productService: ProductService,
+    private productAdminService:ProductAdminService,
     private toastrService:ToastrService
   ) {}
 
@@ -91,7 +86,7 @@ export class ProductAddComponent implements OnInit {
     if(this.productAddForm.valid){
 
       let productModel = Object.assign({}, this.productAddForm.value);
-      this.productService.add(productModel).subscribe(res=>{
+      this.productAdminService.add(productModel).subscribe(res=>{
         console.log(res)
         this.toastrService.success(res.message,"ürün eklendi");
       })
@@ -102,8 +97,8 @@ export class ProductAddComponent implements OnInit {
   }
   delete(){
     let productModel=Object.assign({}, this.productAddForm.value);
-    this.productService.delete(productModel).subscribe(res=>{
-      this.toastrService.success(res.message,"ürün silindi")
+    this.productAdminService.delete(productModel).subscribe(res=>{
+      this.toastrService.success(res.message,"Ürün Silindi")
     })
     
   }

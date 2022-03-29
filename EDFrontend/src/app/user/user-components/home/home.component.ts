@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/products';
-import { CategoryService } from '../../user-services/category.service';
-import { ProductService } from '../../user-services/product.service';
+import { CategoryService } from '../../../services/category.service';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-home',

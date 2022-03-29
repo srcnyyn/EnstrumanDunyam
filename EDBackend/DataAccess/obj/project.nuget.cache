@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qsNDdYRFC7uj9X9wg1VxG90dKo7+52gOoTio2w2EXFvDw/SwfyfdU+pxEsEYdjil+MGIohPGOmONZpAOb/w69g==",
+  "dgSpecHash": "h0bVTKsDSMAQStIIUqFxnr6sG+QFYpkOGubQrTR7qaaC0w18PalEuw9gdOKsbatYRAXwP3T5z2zVydJQYOVzvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\serca\\Desktop\\Çalışma\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serca\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\serca\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
