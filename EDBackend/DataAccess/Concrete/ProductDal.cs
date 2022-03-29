@@ -18,17 +18,18 @@ namespace DataAccess.Concrete
                              on p.ColorId equals c.Id
                              join b in context.Brands
                              on p.BrandId equals b.Id
-                             join i in context.Images
-                             on p.Id equals i.ProductId
                              join ch in context.ChildCategories
                              on p.ChildCategoryId equals ch.Id
+                             join ca in context.Categories
+                             on p.CategoryId equals ca.Id
+
                              select new ProductDto{
                                  ProductDtoId = p.Id,
                                  ProductName=p.ProductName,
                                  BrandName=b.BrandName,
                                  ColorName=c.ColorName,
-                                 ChildCategory=ch.ChildCategoryName,
-                                 ImagePath=i.ImagePath,
+                                 CategoryName=ca.CategoryName,
+                                 ChildCategoryName=ch.ChildCategoryName,
                                  UnitPrice=p.UnitPrice,
                                  Quantity=p.Quantity
 

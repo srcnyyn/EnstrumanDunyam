@@ -1,6 +1,7 @@
 using Business.Abstract;
 using DataAccess.Abstract;
 using DataAccess.Entities.Concrete;
+using DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EDAPI.Controller
@@ -121,6 +122,15 @@ namespace EDAPI.Controller
             }
             return BadRequest(result);
 
+        }
+        [HttpGet("getproductdetail")]
+        public IActionResult GetProductDetail(){
+            var result = _productService.GetProductDto();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
         
     }

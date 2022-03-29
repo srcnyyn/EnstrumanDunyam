@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Brand } from 'src/app/models/brand';
-import { Product } from 'src/app/models/products';
-import { BrandService } from '../../admin-services/brand.service';
-import { ProductService } from '../../admin-services/product.service';
+import { ProductDetails } from 'src/app/models/product-detail';
+import { ProductDetailService } from '../../admin-services/product-detail.service';
 
 @Component({
   selector: 'app-products',
@@ -11,24 +9,23 @@ import { ProductService } from '../../admin-services/product.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[]=[];
-  brands:Brand[]=[];
+  productDetails:ProductDetails[]=[]
  
   constructor(
-    private productService:ProductService,
-    private brandService:BrandService,
+    private productDetailService:ProductDetailService
   ) { }
 
   ngOnInit(): void {
-    this.getBrand()
+    this.getProductWithDetails();
   }
   
- 
-  
-  getBrand(){
-    this.brandService.getAll().subscribe(res=>{
-      this.brands=res.data
+  getProductWithDetails(){
+    this.productDetailService.getAll().subscribe(res=>{
+      this.productDetails=res.data
     })
   }
+ 
+  
+  
 
 }

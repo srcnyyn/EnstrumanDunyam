@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { ProductDeleteComponent } from './product-delete/product-delete.component';
 
 
 
@@ -17,7 +18,8 @@ import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     ProductsComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    ProductDeleteComponent
   ],
   imports: [
     CommonModule,
