@@ -18,5 +18,8 @@ export class ProductService {
   add(product:Product):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(this.apiUrl+'/product/add',product)
   }
+  delete(product:Product):Observable<ResponseModel>{
+    return this.http.post<ResponseModel>(this.apiUrl+'/product/delete',product)
+  }
   
 }

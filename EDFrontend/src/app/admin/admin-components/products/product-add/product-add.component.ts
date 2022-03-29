@@ -41,7 +41,7 @@ export class ProductAddComponent implements OnInit {
     private colorService: ColorService,
     private childCategoryService: ChildCategoryService,
     private categoryService: CategoryService,
-    private productservice: ProductService,
+    private productService: ProductService,
     private toastrService:ToastrService
   ) {}
 
@@ -53,6 +53,7 @@ export class ProductAddComponent implements OnInit {
   }
   createProductAddForm() {
     this.productAddForm = this.formBuilder.group({
+      id:0,
       productName: ['', Validators.required],
       brandId: ['', Validators.required],
       colorId: ['', Validators.required],
@@ -90,7 +91,7 @@ export class ProductAddComponent implements OnInit {
     if(this.productAddForm.valid){
 
       let productModel = Object.assign({}, this.productAddForm.value);
-      this.productservice.add(productModel).subscribe(res=>{
+      this.productService.add(productModel).subscribe(res=>{
         console.log(res)
         this.toastrService.success(res.message,"ürün eklendi");
       })
@@ -98,5 +99,12 @@ export class ProductAddComponent implements OnInit {
       this.toastrService.error("Hatalı Giriş")
 
     }
+  }
+  delete(){
+    let productModel=Object.assign({}, this.productAddForm.value);
+    this.productService.delete(productModel).subscribe(res=>{
+      this.toastrService.success(res.message,"ürün silindi")
+    })
+    
   }
 }

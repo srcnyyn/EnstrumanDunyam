@@ -100,7 +100,7 @@ namespace EDAPI.Controller
 
 
         }
-        [HttpDelete("delete")]
+        [HttpPost("delete")]
         public IActionResult Delete(Product product)
         {
 

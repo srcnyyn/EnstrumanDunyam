@@ -5,8 +5,14 @@
             <form [formGroup]="productAddForm">
                 
               <mat-form-field appearance="fill">
+                <mat-label>Ürün Id</mat-label>
+                <input matInput formControlName="id"  >
+              </mat-form-field>
+              <br>
+
+              <mat-form-field appearance="fill">
                 <mat-label>Ürün Adı Giriniz</mat-label>
-                <input matInput formControlName="productName"  [value]="">
+                <input matInput formControlName="productName" >
               </mat-form-field>
               <br>
 
@@ -68,6 +74,7 @@
 
                  
                   <button mat-raised-button color="accent" (click)="add()">Ekle</button>
+                  <button mat-raised-button color="accent" (click)="delete()">Sil</button>
        </form>
         </mat-card>
         
