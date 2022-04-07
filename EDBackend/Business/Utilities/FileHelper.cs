@@ -13,7 +13,9 @@ namespace Business.Utilities
         }
         public static string Update(IFormFile file, string filePath, string root)
         {
-            Delete(filePath);
+            if(File.Exists(filePath))
+               Delete(filePath);
+            
             return Upload(file,root);
         }
         public static string Upload(IFormFile file,string root)

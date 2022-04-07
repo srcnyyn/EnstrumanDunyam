@@ -1,6 +1,7 @@
 using Business.Abstract;
 using DataAccess.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace EDAPI.Controller
 {
@@ -15,10 +16,10 @@ namespace EDAPI.Controller
             _colorService = colorService;
         }
         [HttpGet("getbyid")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
 
-            var result = _colorService.Get(id);
+            var result = await _colorService.GetAsync(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -27,9 +28,9 @@ namespace EDAPI.Controller
 
         }
         [HttpGet("getall")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
-            var result = _colorService.GetAll();
+            var result = await _colorService.GetAllAsync();
             if (result.Success)
             {
                 return Ok(result);
@@ -38,9 +39,9 @@ namespace EDAPI.Controller
 
         }
         [HttpPost("add")]
-        public IActionResult Add(Color color)
+        public async Task<IActionResult> AddAsync(Color color)
         {
-            var result = _colorService.Add(color);
+            var result = await _colorService.AddAsync(color);
             if (result.Success)
             {
                 return Ok(result);
@@ -49,10 +50,10 @@ namespace EDAPI.Controller
 
         }
         [HttpPut("update")]
-        public IActionResult Update(Color color)
+        public async Task<IActionResult> UpdateAsync(Color color)
         {
 
-            var result = _colorService.Update(color);
+            var result = await _colorService.UpdateAsync(color);
             if (result.Success)
             {
                 return Ok(result);
@@ -60,10 +61,10 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpDelete("delete")]
-        public IActionResult Delete(Color color)
+        public async Task<IActionResult> DeleteAsync(Color color)
         {
 
-            var result = _colorService.Delete(color);
+            var result = await _colorService.DeleteAsync(color);
             if (result.Success)
             {
                 return Ok(result);

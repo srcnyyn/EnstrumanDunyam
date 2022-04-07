@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using DataAccess.Entities.BaseEntities;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,51 +11,52 @@ namespace DataAccess.Repositories
     public class EntityRepositoryDal<TEntity, TContext> : IEntityRepositoryDal<TEntity> where TEntity :BaseEntity, new() where TContext : DbContext, new()
     {
 
-        public void Add(TEntity entity)
+        public async Task AddAsync(TEntity entity)
         {
             using (EdDBContext context = new EdDBContext())
             {
                 var addedEntity = context.Entry(entity);
                 addedEntity.State=EntityState.Added;
-                context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
 
-        public void Delete(TEntity entity)
+        public async Task DeleteAsync(TEntity entity)
         {
             using (EdDBContext context = new EdDBContext())
             {
                 var deletedEntity=context.Entry(entity);
                 deletedEntity.State=EntityState.Deleted;
-                context.SaveChanges();
+                await context.SaveChangesAsync();
                 
             }
         }
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
 
         {
             using(EdDBContext context = new EdDBContext())
             {
-                return context.Set<TEntity>().SingleOrDefault(filter);
+                return await context.Set<TEntity>().SingleOrDefaultAsync(filter);
             }
         }
 
-        public List<TEntity> GetAll(Expression<Func<TEntity,bool>> filter=null)
+        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity,bool>> filter=null)
         {
             using (EdDBContext context = new EdDBContext())
             {
-                return filter==null?context.Set<TEntity>().ToList():context.Set<TEntity>().Where(filter).ToList();
+                return filter==null? await context.Set<TEntity>().ToListAsync(): await context.Set<TEntity>().Where(filter).ToListAsync();
             }
         }
 
-        public void Update(TEntity entity)
+        public async Task UpdateAsync(TEntity entity)
         {
             using(EdDBContext context = new EdDBContext())
             {
                 var updatedEntity = context.Entry(entity);
                 updatedEntity.State = EntityState.Modified;
-                context.SaveChanges();
+                await context.SaveChangesAsync();
+
             }
         }
     }

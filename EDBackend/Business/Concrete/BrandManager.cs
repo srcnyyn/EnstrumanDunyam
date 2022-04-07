@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Utilities.Results;
 using DataAccess.Abstract;
@@ -6,8 +7,8 @@ using DataAccess.Entities.Concrete;
 
 namespace Business.Concrete
 {
-    
-    
+
+
     public class BrandManager : IBrandService
     {
         IBrandDal _brandDal;
@@ -17,36 +18,36 @@ namespace Business.Concrete
             _brandDal = brandDal;
         }
 
-        public Result Add(Brand entity)
+        public async Task<Result> AddAsync(Brand entity)
         {
-            _brandDal.Add(entity);
+            await _brandDal.AddAsync(entity);
             return new SuccessResult();
         }
 
-        public Result Delete(Brand entity)
+        public async Task<Result> DeleteAsync(Brand entity)
         {
-            _brandDal.Delete(entity);
+            await _brandDal.DeleteAsync(entity);
             return new SuccessResult();
         }
 
-        public DataResult<Brand> Get(int id)
+        public async Task<DataResult<Brand>> GetAsync(int id)
         {
-            return new SuccessDataResult<Brand>(_brandDal.Get(x=>x.Id==id));
+            return new SuccessDataResult<Brand>(await _brandDal.GetAsync(x => x.Id == id));
         }
 
-        public DataResult<List<Brand>> GetAll()
+        public async Task<DataResult<List<Brand>>> GetAllAsync()
         {
-            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
+            return new SuccessDataResult<List<Brand>>(await _brandDal.GetAllAsync());
         }
 
-        
 
-        public Result Update(Brand entity)
+
+        public async Task<Result> UpdateAsync(Brand entity)
         {
-            _brandDal.Update(entity);
+            await _brandDal.UpdateAsync(entity);
             return new SuccessResult();
         }
 
     }
-    
+
 }

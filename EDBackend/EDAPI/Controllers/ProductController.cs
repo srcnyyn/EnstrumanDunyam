@@ -3,6 +3,7 @@ using DataAccess.Abstract;
 using DataAccess.Entities.Concrete;
 using DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace EDAPI.Controller
 {
@@ -21,10 +22,10 @@ namespace EDAPI.Controller
         }
 
         [HttpGet("getall")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
 
-            var result = _productService.GetAll();
+            var result = await _productService.GetAllAsync();
             if (result.Success)
             {
                 return Ok(result);
@@ -33,10 +34,10 @@ namespace EDAPI.Controller
 
         }
         [HttpGet("getbybrandid")]
-        public IActionResult GetByBrandId(int id)
+        public async Task<IActionResult> GetByBrandIdAsync(int id)
         {
 
-            var result = _productService.GetByBrandId(id);
+            var result = await _productService.GetByBrandIdAsync(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -44,10 +45,10 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpGet("getbycategoryid")]
-        public IActionResult GetByCategoryId(int id)
+        public async Task<IActionResult> GetByCategoryIdAsync(int id)
         {
 
-            var result = _productService.GetByCategoryId(id);
+            var result = await _productService.GetByCategoryIdAsync(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -55,10 +56,10 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpGet("getbychildcategoryid")]
-        public IActionResult GetByChildCategoryId(int id)
+        public async Task<IActionResult> GetByChildCategoryIdAsync(int id)
         {
 
-            var result = _productService.GetByChildCategoryId(id);
+            var result = await _productService.GetByChildCategoryIdAsync(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -66,10 +67,10 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpGet("getbycolorid")]
-        public IActionResult GetByColorId(int id)
+        public async Task<IActionResult> GetByColorIdAsync(int id)
         {
 
-            var result = _productService.GetByColorId(id);
+            var result = await _productService.GetByColorIdAsync(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -77,9 +78,9 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpGet("getbyproductid")]
-        public IActionResult GetByProductId(int id)
+        public async Task<IActionResult> GetByProductIdAsync(int id)
         {
-            var result = _productService.GetByProductId(id);
+            var result = await _productService.GetByProductIdAsync(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -87,10 +88,10 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpPost("add")]
-        public IActionResult Add(Product product)
+        public async Task<IActionResult> AddAsync(Product product)
         {
 
-            var result = _productService.Add(product);
+            var result = await _productService.AddAsync(product);
             if (result.Success)
             {
                 return Ok(result);
@@ -101,10 +102,10 @@ namespace EDAPI.Controller
 
         }
         [HttpPost("delete")]
-        public IActionResult Delete(Product product)
+        public async Task<IActionResult> DeleteAsync(Product product)
         {
 
-            var result = _productService.Delete(product);
+            var result = await _productService.DeleteAsync(product);
             if (result.Success)
             {
                 return Ok(result);
@@ -112,10 +113,10 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpPut("update")]
-        public IActionResult Update(Product product)
+        public async Task<IActionResult> UpdateAsync(Product product)
         {
 
-            var result = _productService.Update(product);
+            var result = await _productService.UpdateAsync(product);
             if (result.Success)
             {
                 return Ok(result);
@@ -124,8 +125,8 @@ namespace EDAPI.Controller
 
         }
         [HttpGet("getproductdetail")]
-        public IActionResult GetProductDetail(){
-            var result = _productService.GetProductDto();
+        public async Task<IActionResult> GetProductDetailAsync(){
+            var result = await _productService.GetProductDtoAsync();
             if (result.Success)
             {
                 return Ok(result);

@@ -2,6 +2,7 @@ using Business.Abstract;
 using DataAccess.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace EDAPI.Controller
 {
@@ -17,10 +18,10 @@ namespace EDAPI.Controller
         }
 
         [HttpGet("getall")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         { 
            
-            var result = _imageService.GetAll();   
+            var result = await _imageService.GetAllAsync();   
             if (result.Success)
             {
                 return Ok(result);
@@ -28,9 +29,9 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpGet("getbyid")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = _imageService.Get(id);
+            var result = await _imageService.GetAsync(id);
             if(result.Success)
             {
                 return Ok(result);
@@ -38,11 +39,11 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpPost("upload")]
-        public IActionResult Upload([FromForm(Name ="Image")] IFormFile file , [FromForm] Image image)
+        public async Task<IActionResult> UploadAsync([FromForm(Name ="Image")] IFormFile file , [FromForm] Image image)
         {
             
           
-            var result =_imageService.Upload(file,image);
+            var result = await _imageService.UploadAsync(file,image);
             if (result.Success)
             {
                 return Ok(result);
@@ -51,9 +52,9 @@ namespace EDAPI.Controller
            
         }
         [HttpDelete("delete")]
-        public IActionResult Delete(Image image)
+        public async Task<IActionResult> DeleteAsync(Image image)
         {
-            var result = _imageService.Delete(image);
+            var result = await _imageService.DeleteAsync(image);
             if(result.Success)
             {
                 return Ok(result);
@@ -61,9 +62,9 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpPost("update")]
-        public IActionResult Update([FromForm(Name ="Image")] IFormFile file,[FromForm] Image image)
+        public async Task<IActionResult> UpdateAsync([FromForm(Name ="Image")] IFormFile file,[FromForm] Image image)
         {
-            var result = _imageService.Update(file,image);
+            var result = await _imageService.UpdateAsync(file,image);
             if(result.Success)
             {
                 return Ok(result);

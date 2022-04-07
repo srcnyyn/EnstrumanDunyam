@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Business.Utilities;
 using Business.Utilities.Results;
 using DataAccess.Entities.Concrete;
@@ -8,14 +9,14 @@ namespace Business.Abstract
 {
     public interface IProductService : IServiceRepository<Product>
     {
-        DataResult<Product> GetByProductId(int id);
+        Task<DataResult<Product>> GetByProductIdAsync(int id);
                 
-        DataResult<List<Product>> GetByCategoryId(int id);
-        DataResult<List<Product>> GetByChildCategoryId(int id);
-        DataResult<List<Product>> GetByColorId(int id);
-        DataResult<List<Product>> GetByBrandId(int id);
+        Task<DataResult<List<Product>>> GetByCategoryIdAsync(int id);
+        Task<DataResult<List<Product>>> GetByChildCategoryIdAsync(int id);
+        Task<DataResult<List<Product>>> GetByColorIdAsync(int id);
+        Task<DataResult<List<Product>>> GetByBrandIdAsync(int id);
 
-        DataResult<List<ProductDto>> GetProductDto();
+        Task<DataResult<List<ProductDto>>> GetProductDtoAsync();
 
       
     }

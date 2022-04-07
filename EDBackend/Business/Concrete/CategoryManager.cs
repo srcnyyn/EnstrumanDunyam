@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Utilities.Results;
 using DataAccess.Abstract;
@@ -16,31 +17,31 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
-        public Result Add(Category entity)
+        public async Task<Result> AddAsync(Category entity)
         {
-            _categoryDal.Add(entity);
+            await _categoryDal.AddAsync(entity);
             return new SuccessResult();
         }
 
-        public Result Delete(Category entity)
+        public async Task<Result> DeleteAsync(Category entity)
         {
-            _categoryDal.Delete(entity);
+            await _categoryDal.DeleteAsync(entity);
              return new SuccessResult();
         }
 
-        public DataResult<Category> Get(int id)
+        public async Task<DataResult<Category>> GetAsync(int id)
         {
-            return new SuccessDataResult<Category>(_categoryDal.Get(x=>x.Id==id));
+            return new SuccessDataResult<Category>(await _categoryDal.GetAsync(x=>x.Id==id));
         }
 
-        public DataResult<List<Category>> GetAll()
+        public async Task<DataResult<List<Category>>> GetAllAsync()
         {
-            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
+            return new SuccessDataResult<List<Category>>(await _categoryDal.GetAllAsync());
         }
 
-        public Result Update(Category entity)
+        public async Task<Result> UpdateAsync(Category entity)
         {
-            _categoryDal.Update(entity);
+            await _categoryDal.UpdateAsync(entity);
              return new SuccessResult();
         }
 

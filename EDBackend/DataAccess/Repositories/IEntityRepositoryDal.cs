@@ -1,16 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using DataAccess.Entities.BaseEntities;
 
 namespace DataAccess.Repositories 
 {
     public interface IEntityRepositoryDal<T> where T: BaseEntity,new() 
     {
-        void Add(T entity);
-        void Delete(T entity);
-        void Update(T entity);
-        T Get(Expression<Func<T, bool>> filter);
-        List<T> GetAll(Expression<Func<T, bool>> filter=null);
+        Task AddAsync(T entity);
+        Task DeleteAsync(T entity);
+        Task UpdateAsync(T entity);
+        Task<T> GetAsync(Expression<Func<T, bool>> filter);
+        Task<List<T>> GetAllAsync(Expression<Func<T, bool>> filter=null);
     }
 }

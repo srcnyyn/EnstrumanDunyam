@@ -3,11 +3,11 @@ import { FormGroup, FormBuilder, FormControl, Validators,} from '@angular/forms'
 import { ToastrService } from 'ngx-toastr';
 
 
-import { BrandService } from '../../../../services/brand.service';
-import { ChildCategoryService } from '../../../../services/child-category.service';
-import { ColorService } from '../../../../services/color.service';
-import { CategoryService } from '../../../../services/category.service';
-import { ProductAdminService } from '../../../admin-services/product-admin.service'
+import { BrandService } from '../../../../services/common/brand.service';
+import { ChildCategoryService } from '../../../../services/common/child-category.service';
+import { ColorService } from '../../../../services/common/color.service';
+import { CategoryService } from '../../../../services/common/category.service';
+import { ProductAdminService } from '../../../../services/admin/product-admin.service'
 
 import { Brand } from 'src/app/models/brand';
 import { ChildCategory } from 'src/app/models/child-category';

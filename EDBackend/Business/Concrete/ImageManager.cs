@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Utilities;
 using Business.Utilities.Results;
@@ -16,40 +17,40 @@ namespace Business.Concrete
             _imageDal=imageDal;  
         }
 
-        public Result Delete(Image image)
+        public async Task<Result> DeleteAsync(Image image)
         {
             FileHelper.Delete("wwwroot/"+image.ImagePath);
-            _imageDal.Delete(image);
+            await _imageDal.DeleteAsync(image);
             return new SuccessResult();
             
         }
 
-        public DataResult<Image> Get(int id)
+        public async Task<DataResult<Image>> GetAsync(int id)
         {
-            return new SuccessDataResult<Image>(_imageDal.Get(i=>i.Id == id));
+            return new SuccessDataResult<Image>(await _imageDal.GetAsync(i=>i.Id == id));
         }
 
-        public DataResult<List<Image>> GetAll()
+        public async Task<DataResult<List<Image>>> GetAllAsync()
         {
-            return new SuccessDataResult<List<Image>>(_imageDal.GetAll());
+            return new SuccessDataResult<List<Image>>(await _imageDal.GetAllAsync());
         }
 
-        public DataResult<List<Image>> GetByProductId(int productId)
+        public async Task<DataResult<List<Image>>> GetByProductIdAsync(int productId)
         {
-            return new SuccessDataResult<List<Image>>(_imageDal.GetAll(i=>i.ProductId==productId));
+            return new SuccessDataResult<List<Image>>(await _imageDal.GetAllAsync(i=>i.ProductId==productId));
         }
 
-        public Result Update(IFormFile file, Image image)
+        public async Task<Result> UpdateAsync(IFormFile file, Image image)
         {
             FileHelper.Update(file , "wwwroot/" +image.ImagePath,"wwwroot/");
-            _imageDal.Update(image);
+            await _imageDal.UpdateAsync(image);
             return new SuccessResult();
         }
 
-        public Result Upload(IFormFile file, Image image)
+        public async Task<Result> UploadAsync(IFormFile file, Image image)
         {
            image.ImagePath = FileHelper.Upload(file,"wwwroot/");
-           _imageDal.Add(image);
+            await _imageDal.AddAsync(image);
            return new SuccessResult();
         }
     }

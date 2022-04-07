@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
+
 namespace EDAPI
 {
     public class Startup
@@ -25,7 +26,8 @@ namespace EDAPI
             services.AddCors();
             services.AddControllers();
             
-
+            
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EDAPI", Version = "v1" });

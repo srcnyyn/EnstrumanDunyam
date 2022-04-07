@@ -1,14 +1,16 @@
 using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
+using Business.Utilities.Interceptors;
+using Castle.DynamicProxy;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
-using Castle.DynamicProxy;
 
 
 
 
-namespace Business.Utilities.DependencyResolver.Autofac
+namespace Business.DependencyResolver.Autofac
 {
     public class AutofacBusinessModule:Module
     {
@@ -32,6 +34,12 @@ namespace Business.Utilities.DependencyResolver.Autofac
             builder.RegisterType<ImageManager>().As<IImageService>();
             builder.RegisterType<ImageDal>().As<IImageDal>();
             
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces().EnableInterfaceInterceptors(new ProxyGenerationOptions()
+            {
+                Selector = new AspectInterceptorSelector()
+            }).SingleInstance();
             
         }
     }

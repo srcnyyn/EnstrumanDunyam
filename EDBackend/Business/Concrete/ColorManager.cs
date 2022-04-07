@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Utilities.Results;
 using DataAccess.Abstract;
@@ -15,31 +16,31 @@ namespace Business.Concrete
             _colorDal=colorDal;  
         }
 
-        public Result Add(Color entity)
+        public async Task<Result> AddAsync(Color entity)
         {
-            _colorDal.Add(entity);
+            await _colorDal.AddAsync(entity);
             return new SuccessResult();
         }
 
-        public Result Delete(Color entity)
+        public async Task<Result> DeleteAsync(Color entity)
         {
-            _colorDal.Delete(entity);
+            await _colorDal.DeleteAsync(entity);
             return new SuccessResult();
         }
 
-        public DataResult<Color> Get(int id)
+        public async Task<DataResult<Color>> GetAsync(int id)
         {
-            return new SuccessDataResult<Color>(_colorDal.Get(x=>x.Id==id));
+            return new SuccessDataResult<Color>(await _colorDal.GetAsync(x=>x.Id==id));
         }
 
-        public DataResult<List<Color>> GetAll()
+        public async Task<DataResult<List<Color>>> GetAllAsync()
         {
-            return new SuccessDataResult<List<Color>>(_colorDal.GetAll());
+            return new SuccessDataResult<List<Color>>(await _colorDal.GetAllAsync());
         }
 
-        public Result Update(Color entity)
+        public async Task<Result> UpdateAsync(Color entity)
         {
-            _colorDal.Update(entity);
+            await _colorDal.UpdateAsync(entity);
             return new SuccessResult();
         }
     }

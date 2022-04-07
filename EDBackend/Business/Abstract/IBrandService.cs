@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Business.Utilities;
 using Business.Utilities.Results;
 using DataAccess.Entities.Concrete;
@@ -7,7 +8,7 @@ namespace Business.Abstract
 {
     public interface IBrandService:IServiceRepository<Brand>
     {
-        DataResult<Brand> Get(int id);
+        Task<DataResult<Brand>> GetAsync(int id);
        
         
     }

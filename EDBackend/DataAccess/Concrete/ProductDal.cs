@@ -4,12 +4,14 @@ using DataAccess.Entities.Concrete;
 using DataAccess.Entities.Dtos;
 using DataAccess.Repositories;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete
 {
     public class ProductDal : EntityRepositoryDal<Product, EdDBContext>, IProductDal
     {
-        public List<ProductDto> GetProductDetails()
+        public async Task<List<ProductDto>> GetProductDetailsAsync()
         {
             using (EdDBContext context=new EdDBContext())
             {
@@ -34,7 +36,7 @@ namespace DataAccess.Concrete
                                  Quantity=p.Quantity
 
                                 };
-                                return result.ToList();
+                                return await result.ToListAsync();
             }
         }
     }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Utilities.Results;
 using DataAccess.Abstract;
@@ -15,36 +16,36 @@ namespace Business.Concrete
             _childCategoryDal = childCategoryDal;
         }
 
-        public Result Add(ChildCategory entity)
+        public async Task<Result> AddAsync(ChildCategory entity)
         {
-            _childCategoryDal.Add(entity);
+            await _childCategoryDal.AddAsync(entity);
             return new SuccessResult();
         }
 
-        public Result Delete(ChildCategory entity)
+        public async Task<Result> DeleteAsync(ChildCategory entity)
         {
-            _childCategoryDal.Delete(entity);
+            await _childCategoryDal.DeleteAsync(entity);
             return new SuccessResult();
         }
 
-        public DataResult<ChildCategory> Get(int id)
+        public async Task<DataResult<ChildCategory>> GetAsync(int id)
         {
-            return new SuccessDataResult<ChildCategory>(_childCategoryDal.Get(x=>x.Id == id));
+            return new SuccessDataResult<ChildCategory>(await _childCategoryDal.GetAsync(x=>x.Id == id));
         }
 
-        public DataResult<List<ChildCategory>> GetAll()
+        public async Task<DataResult<List<ChildCategory>>> GetAllAsync()
         {
-            return  new SuccessDataResult<List<ChildCategory>>(_childCategoryDal.GetAll());
+            return  new SuccessDataResult<List<ChildCategory>>(await _childCategoryDal.GetAllAsync());
         }
 
-        public DataResult<List<ChildCategory>> GetByCategoryId(int categoryId)
+        public async Task<DataResult<List<ChildCategory>>> GetByCategoryIdAsync(int categoryId)
         {
-            return new SuccessDataResult<List<ChildCategory>>(_childCategoryDal.GetAll(x=>x.CategoryId==categoryId));
+            return new SuccessDataResult<List<ChildCategory>>(await _childCategoryDal.GetAllAsync(x=>x.CategoryId==categoryId));
         }
 
-        public Result Update(ChildCategory entity)
+        public async Task<Result> UpdateAsync(ChildCategory entity)
         {
-            _childCategoryDal.Update(entity);
+            await _childCategoryDal.UpdateAsync(entity);
             return new SuccessResult();
         }
     }

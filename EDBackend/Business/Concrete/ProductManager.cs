@@ -1,10 +1,13 @@
 using Business.Abstract;
+using Business.Aspects.Autofac.Validation;
+using Business.Utilities.CrossCuttingConcerns.Validation;
 using Business.Utilities.Results;
 using Business.ValidationRules;
 using DataAccess.Abstract;
 using DataAccess.Entities.Concrete;
 using DataAccess.Entities.Dtos;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
@@ -23,30 +26,25 @@ namespace Business.Concrete
            
         }
 
-        public Result Add(Product entity)
+        [ValidationAspect(typeof(ProductValidation))]
+        public async Task<Result> AddAsync(Product entity)
         {
-            ProductValidation validations = new();
-             var result = validations.Validate(entity);
-             if (!result.IsValid)
-             {
-                 return new ErrorResult(result.ToString(" ~ "));
-             }
-            _productDal.Add(entity);
+            await _productDal.AddAsync(entity);
             return new SuccessResult(" Ekleme İşlemi Başarılı");
 
         }
 
-        public Result Delete(Product entity)
+        public async Task<Result> DeleteAsync(Product entity)
         {
 
-            _productDal.Delete(entity);
+           await _productDal.DeleteAsync(entity);
             return new SuccessResult();
 
         }
 
-        public DataResult<List<Product>> GetAll()
+        public async Task<DataResult<List<Product>>> GetAllAsync()
         {
-            var data = _productDal.GetAll();
+            var data = await _productDal.GetAllAsync();
             if (data==null)
             {
                 return new ErrorDataresult<List<Product>>("data boş");
@@ -54,41 +52,41 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(data,"data dolu");
         }
 
-        public DataResult<List<Product>> GetByBrandId(int id)
+        public async Task<DataResult<List<Product>>> GetByBrandIdAsync(int id)
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.BrandId == id));
+            return new SuccessDataResult<List<Product>>(await _productDal.GetAllAsync(x => x.BrandId == id));
         }
 
-        public DataResult<List<Product>> GetByCategoryId(int id)
+        public async Task<DataResult<List<Product>>> GetByCategoryIdAsync(int id)
         {
             
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(x=>x.CategoryId==id));
+            return new SuccessDataResult<List<Product>>(await _productDal.GetAllAsync(x=>x.CategoryId==id));
 
         }
 
-        public DataResult<List<Product>> GetByChildCategoryId(int id)
+        public async Task<DataResult<List<Product>>> GetByChildCategoryIdAsync(int id)
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.ChildCategoryId == id));
+            return new SuccessDataResult<List<Product>>(await _productDal.GetAllAsync(x => x.ChildCategoryId == id));
         }
 
-        public DataResult<List<Product>> GetByColorId(int id)
+        public async Task<DataResult<List<Product>>> GetByColorIdAsync(int id)
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(x => x.ColorId == id));
+            return new SuccessDataResult<List<Product>>(await _productDal.GetAllAsync(x => x.ColorId == id));
         }
 
-        public DataResult<List<ProductDto>> GetProductDto()
+        public async Task<DataResult<List<ProductDto>>> GetProductDtoAsync()
         { 
-            return new SuccessDataResult<List<ProductDto>>(_productDal.GetProductDetails());
+            return new SuccessDataResult<List<ProductDto>>(await _productDal.GetProductDetailsAsync());
         }
 
-        public DataResult<Product> GetByProductId(int id)
+        public async Task<DataResult<Product>> GetByProductIdAsync(int id)
         {
-            return new SuccessDataResult<Product>(_productDal.Get(x => x.Id == id));
+            return new SuccessDataResult<Product>(await _productDal.GetAsync(x => x.Id == id));
         }
 
-        public Result Update(Product entity)
+        public async Task<Result> UpdateAsync(Product entity)
         {
-            _productDal.Update(entity);
+            await _productDal.UpdateAsync(entity);
             return new SuccessResult();
         }
     }

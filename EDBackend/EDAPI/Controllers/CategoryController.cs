@@ -1,6 +1,7 @@
 using Business.Abstract;
 using DataAccess.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace EDAPI.Controller
 {
@@ -16,9 +17,9 @@ namespace EDAPI.Controller
         }
 
         [HttpGet("getbyid")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = _categoryService.Get(id);
+            var result = await _categoryService.GetAsync(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -26,9 +27,9 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpGet("getall")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
-            var result = _categoryService.GetAll();
+            var result = await _categoryService.GetAllAsync();
             if (result.Success)
             {
                 return Ok(result);
@@ -36,9 +37,9 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpPost("add")]
-        public IActionResult Add(Category category)
+        public async Task<IActionResult> AddAsync(Category category)
         {
-            var result = _categoryService.Add(category);
+            var result = await _categoryService.AddAsync(category);
             if (result.Success)
             {
                 return Ok(result);
@@ -46,9 +47,9 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpDelete("delete")]
-        public IActionResult Delete(Category category)
+        public async Task<IActionResult> DeleteAsync(Category category)
         {
-            var result = _categoryService.Delete(category);
+            var result = await _categoryService.DeleteAsync(category);
             if (result.Success)
             {
                 return Ok(result);
@@ -56,9 +57,9 @@ namespace EDAPI.Controller
             return BadRequest(result);
         }
         [HttpPut("update")]
-        public IActionResult Update(Category category)
+        public async Task<IActionResult> UpdateAsync(Category category)
         {
-            var result = _categoryService.Update(category);
+            var result = await _categoryService.UpdateAsync(category);
             if (result.Success)
             {
                 return Ok(result);

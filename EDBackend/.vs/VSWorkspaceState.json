@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\EDAPI"
+    "\\Business",
+    "\\Business\\Utilities",
+    "\\DataAccess"
   ],
-  "SelectedNode": "\\EDAPI\\Startup.cs",
+  "SelectedNode": "\\EnstrumanDunyam.sln",
   "PreviewInSolutionExplorer": false
 }
