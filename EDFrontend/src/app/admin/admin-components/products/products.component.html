@@ -1,36 +1,54 @@
-<mat-tab-group class="tab-menu">
-  <mat-tab label="Tüm Ürünler">
-    <table class="table" style="color: gray;">
-      <tr>
-        <th>Ürün Adı</th>
-        <th>Marka</th>
-        <th>Renk</th>
-        <th>Kategori</th>
-        <th>Alt Kategori</th>
-        <th>Fiyat</th>
-        <th>Stok</th>
-      </tr>
+<div class="container">
+      <table class="table" >
+        <tr class="table-header">
+          <th>Ürün Adı</th>
+          <th>Marka</th>
+          <th>Renk</th>
+          <th>Kategori</th>
+          <th>Alt Kategori</th>
+          <th>Fiyat</th>
+          <th>Stok</th>
+        </tr>
+        <tr>  
+          <td>
+            <input class="add-input" #txtProductName type="text" placeholder="Ürün Adı Giriniz.."/>
+          </td>
+          <td>
+            <input class="add-input" #txtProductName type="text" placeholder="Ürün Adı Giriniz.."/>
+          </td>
+          <td>
+            <input class="add-input" #txtProductName type="text" placeholder="Ürün Adı Giriniz.."/>
+          </td>
+          <td>
+            <input class="add-input" #txtProductName type="text" placeholder="Ürün Adı Giriniz.."/>
+          </td>
+          <td>
+            <input class="add-input" #txtProductName type="text" placeholder="Ürün Adı Giriniz.."/>
+          </td>
+          <td>
+            <input class="add-input" #txtProductName type="text" placeholder="Ürün Adı Giriniz.."/>
+          </td>
+          <td>
+            <input class="add-input" #txtProductName type="text" placeholder="Ürün Adı Giriniz.."/>
+          </td>
+          <td>
+
+            <button class="op-button" style="width: 110px;" >Ekle</button>
+          </td>
+        </tr>
+      
+        <tr *ngFor="let product of productDetails">
+          <td>{{ product.productName }}</td>
+          <td>{{ product.brandName }}</td>
+          <td>{{ product.colorName }}</td>
+          <td>{{ product.categoryName }}</td>
+          <td>{{ product.childCategoryName }}</td>
+          <td>{{ product.unitPrice }}</td>
+          <td>{{ product.quantity }}</td>
+          <td> <button class="op-button">Sil</button>
+          <button class="op-button">Güncelle</button></td>
+        </tr>
+      </table>
     
-      <tr *ngFor="let product of productDetails">
-        <td>{{ product.productName }}</td>
-        <td>{{ product.brandName }}</td>
-        <td>{{ product.colorName }}</td>
-        <td>{{ product.categoryName }}</td>
-        <td>{{ product.childCategoryName }}</td>
-        <td>{{ product.unitPrice }}</td>
-        <td>{{ product.quantity }}</td>
-      </tr>
-    </table>
-  </mat-tab>
-  <mat-tab label="Ürün Ekle">
-    <app-product-add></app-product-add>
-  </mat-tab>
-  <mat-tab label="Ürün Sil">
-    <app-product-delete></app-product-delete>
-  </mat-tab>
-  <mat-tab label="Ürün Güncelle">
-    <p>Ürün Güncelleme Sayfası</p>
-  </mat-tab>
-</mat-tab-group>
 
-
+</div>

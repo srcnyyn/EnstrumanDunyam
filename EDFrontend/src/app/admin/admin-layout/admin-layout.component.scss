@@ -1,6 +1,19 @@
-.admin-nav-container {
-    width: 90%;
-    height: 800px;
+.layout-container{
+
+  width:1520px ;
+}
+
+   .admin-nav-container {
+    width: 100%;
+    height: 750px;
     margin: 10px;
     border: 1px solid #555;
+  }
+  .admin-content-container{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    
   }

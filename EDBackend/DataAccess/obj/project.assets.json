@@ -5762,22 +5762,23 @@
   },
   "packageFolders": {
     "C:\\Users\\serca\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\serca\\Desktop\\Çalışma\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\serca\\Desktop\\Çalışma\\EnstrumanDunyam\\EDBackend\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\serca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\serca\\Desktop\\Çalışma\\EnstrumanDunyam\\EDBackend\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\serca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -1,9 +1,21 @@
-.list-group-item{
-    background-color:blanchedalmond;
-    color: black;
+
+.table{
+    color: gray;
+    border-style: outset;
+    border-color: antiquewhite;
+    .table-header{
+        margin: 3px;
+        font-size: 20px;
+        color:antiquewhite;
+    }
+    .op-button{
+        color: antiquewhite;
+        font-size: 14px;
+    }
 }
-.tab-menu{
-    background-color: black;
-    
+.add-input{
+
+    color:white;
 }
+
 
