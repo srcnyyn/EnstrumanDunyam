@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
    
     this.getAll();
+    // this.getByCategoryId(id:);
     
   }
 

@@ -13,7 +13,7 @@ namespace Business.Concrete
 {
     public class ProductManager : IProductService
     {
-        
+
         IProductDal _productDal;
         ICategoryDal _categoryDal;
         IChildCategoryDal _childCategoryDal;
@@ -23,21 +23,27 @@ namespace Business.Concrete
             _productDal = productDal;
             _categoryDal = categoryDal;
             _childCategoryDal = childCategoryDal;
-           
+
         }
 
         [ValidationAspect(typeof(ProductValidation))]
         public async Task<Result> AddAsync(Product entity)
-        {
-            await _productDal.AddAsync(entity);
-            return new SuccessResult(" Ekleme İşlemi Başarılı");
+        { var result = CheckCategoryCount(entity.CategoryId);
+            if (result.Success)
+            {
+                await _productDal.AddAsync(entity);
+                return new SuccessResult(" Ekleme İşlemi Başarılı");
+
+            }
+            return new ErrorResult(result.Message);
+
 
         }
 
         public async Task<Result> DeleteAsync(Product entity)
         {
 
-           await _productDal.DeleteAsync(entity);
+            await _productDal.DeleteAsync(entity);
             return new SuccessResult();
 
         }
@@ -45,11 +51,11 @@ namespace Business.Concrete
         public async Task<DataResult<List<Product>>> GetAllAsync()
         {
             var data = await _productDal.GetAllAsync();
-            if (data==null)
+            if (data == null)
             {
                 return new ErrorDataresult<List<Product>>("data boş");
             }
-            return new SuccessDataResult<List<Product>>(data,"data dolu");
+            return new SuccessDataResult<List<Product>>(data, "data dolu");
         }
 
         public async Task<DataResult<List<Product>>> GetByBrandIdAsync(int id)
@@ -59,8 +65,8 @@ namespace Business.Concrete
 
         public async Task<DataResult<List<Product>>> GetByCategoryIdAsync(int id)
         {
-            
-            return new SuccessDataResult<List<Product>>(await _productDal.GetAllAsync(x=>x.CategoryId==id));
+
+            return new SuccessDataResult<List<Product>>(await _productDal.GetAllAsync(x => x.CategoryId == id));
 
         }
 
@@ -75,7 +81,7 @@ namespace Business.Concrete
         }
 
         public async Task<DataResult<List<ProductDto>>> GetProductDtoAsync()
-        { 
+        {
             return new SuccessDataResult<List<ProductDto>>(await _productDal.GetProductDetailsAsync());
         }
 
@@ -83,11 +89,27 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Product>(await _productDal.GetAsync(x => x.Id == id));
         }
-
         public async Task<Result> UpdateAsync(Product entity)
         {
+            var result = CheckCategoryCount(entity.CategoryId);
+            if (result.Success)
+            {
             await _productDal.UpdateAsync(entity);
             return new SuccessResult();
+            }
+            return new ErrorResult(result.Message);
+            
         }
+
+        #region BusinessRules
+            private Result CheckCategoryCount(int categoryId)
+        {
+            var result = _productDal.GetAllAsync(p => p.CategoryId == categoryId);
+            if (result.Result.Count >= 10)
+                return new ErrorResult("bir kategoride en fazla 10 ürün olabilir");
+            return new SuccessResult();
+        }
+        #endregion
+        
     }
 }

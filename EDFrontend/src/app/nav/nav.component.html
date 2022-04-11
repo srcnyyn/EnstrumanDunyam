@@ -17,26 +17,28 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="product">Ürünler</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="categories">Kategoriler</a>
-              </li>
+              
               <li ngbDropdown class="nav-item">
                 <a href (click)="false" class="nav-link" ngbDropdownToggle>Kategoriler</a>
                 <div ngbDropdownMenu>
-                  <button ngbDropdownItem>Action</button>
-                  <button ngbDropdownItem>Another action</button>
-                  <button ngbDropdownItem>Something else here</button>
-                  <button ngbDropdownItem>Separated link</button>
+                  
+                  <button type="button" ngbDropdownItem routerLink="product">Tüm Ürünler</button>
+                  <button ngbDropdownItem *ngFor="let category of categories" type="button" routerLink="product/getbycategoryid?id={{category.id}}">
+                    <div > {{category.categoryName}} </div>
+                  </button>
+                   
+                                   
                 </div>
               </li>
                 
             <li ngbDropdown class="nav-item">
               <a href (click)="false" class="nav-link " ngbDropdownToggle>Sepet</a>
               <div ngbDropdownMenu>
-                <button ngbDropdownItem>Action</button>
-                <button ngbDropdownItem>Another action</button>
-                <button ngbDropdownItem>Something else here</button>
-                <button ngbDropdownItem>Separated link</button>
+                <button ngbDropdownItem>Ürün 1</button>
+                <button ngbDropdownItem>Ürün 2</button>
+                <button ngbDropdownItem>Ürün 3</button>
+                <button ngbDropdownItem>Ürün 4</button>
+                
               </div>
             </li>
             </ul>
