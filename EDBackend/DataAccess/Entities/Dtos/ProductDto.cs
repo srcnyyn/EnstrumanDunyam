@@ -2,7 +2,7 @@ namespace DataAccess.Entities.Dtos
 {
     public class ProductDto
     {
-        public int ProductDtoId { get; set; }
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string BrandName { get; set; }
         public string ColorName { get; set; }

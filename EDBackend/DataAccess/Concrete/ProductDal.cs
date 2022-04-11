@@ -26,7 +26,7 @@ namespace DataAccess.Concrete
                              on p.CategoryId equals ca.Id
 
                              select new ProductDto{
-                                 ProductDtoId = p.Id,
+                                 ProductId = p.Id,
                                  ProductName=p.ProductName,
                                  BrandName=b.BrandName,
                                  ColorName=c.ColorName,

@@ -17,8 +17,8 @@ export class ProductAdminService {
   add(product:Product):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(this.apiUrl+'/product/add',product)
   }
-  delete(product:Product):Observable<ResponseModel>{
-    return this.http.delete<ResponseModel>(this.apiUrl+'/product/delete')
+  delete(product:Product[]):Observable<ResponseModel>{
+    return this.http.post<ResponseModel>(this.apiUrl+'/product/delete',product)
   }
   update(product:Product):Observable<ResponseModel>{
     return this.http.put<ResponseModel>(this.apiUrl+'/product/update',product)

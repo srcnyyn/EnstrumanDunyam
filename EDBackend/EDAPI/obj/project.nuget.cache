@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CUCuEuh6R/VIe1Sc6AyaWVMuhBmF5Q2iIsyQ4DeyXP1Qnp0vvTAdQRMr3ZsFtVsc7OoPpJF9MX+NcnJL8pQcjw==",
+  "dgSpecHash": "xzZ3qcyyiPY/6e1SqHdMtK8cctLOobhlqmur8LP1HKimwKKFhsOcMWqPC2t1um5wXYCHGSjRwIkKLn9Fm+YATw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\serca\\Desktop\\Çalışma\\EnstrumanDunyam\\EDBackend\\EDAPI\\EDAPI.csproj",
+  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\EDAPI\\EDAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serca\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
     "C:\\Users\\serca\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.2.0\\autofac.extensions.dependencyinjection.7.2.0.nupkg.sha512",
