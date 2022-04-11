@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xhcch2eKXwwsgAaWI8WPhEEqS1A1ihy1aotKZUlcQbY4HygWOX+XCyIKCxFKiTlRIfiqoOpVTmRkLg4omHzgVA==",
+  "dgSpecHash": "9/5aoaj39GsxntIVL/32c2WZkck94U+LbKx0kDKXijLbO1MvhW8kblVa9rc68ft5fU0ajESQon7ItJEE8ZPvSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\serca\\Desktop\\Calismalar\\EnstrumanDunyam\\EDBackend\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\serca\\Desktop\\Çalışma\\EnstrumanDunyam\\EDBackend\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\serca\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
     "C:\\Users\\serca\\.nuget\\packages\\autofac.extras.dynamicproxy\\6.0.1\\autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
