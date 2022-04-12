@@ -8,7 +8,7 @@ import { Brand } from 'src/app/models/brand';
 import { Category } from 'src/app/models/category';
 import { ChildCategory } from 'src/app/models/child-category';
 import { Color } from 'src/app/models/color';
-import { ProductDetails } from 'src/app/models/product-detail';
+import { ProductDetail } from 'src/app/models/product-detail';
 import { Product } from 'src/app/models/products';
 
 import { ProductAdminService } from 'src/app/services/admin/product-admin.service';
@@ -29,7 +29,9 @@ export class ProductsComponent implements OnInit {
   productAddForm:FormGroup;
   productUpdateForm:FormGroup;
 
-  productDetails:ProductDetails[]=[]
+  productDetails:ProductDetail[]=[]
+  productDetail:ProductDetail
+
   brands:Brand[]=[]
   colors:Color[]=[]
   categories:Category[]=[]
@@ -75,14 +77,9 @@ export class ProductsComponent implements OnInit {
       quantity:['',Validators.required],
     })
   }
+  
  
-  createProductUpdateForm(){
-    this.getProductWithDetails()
-    this.productUpdateForm = this.formBuilder.group({
-      id:this.product,
-      prodductName:this.product
-    })
-  }
+ 
   
   
   
@@ -107,7 +104,8 @@ getCategories(){
     })
   }
  getChCatBySelectedCategory(){
-
+   this.currentCategoryId=this.categories[0].id
+  console.log(this.currentCategoryId)
    this.childCategoryService.getByCategoryId(this.currentCategoryId).subscribe(res=>{
      this.childCats=res.data
     });
@@ -143,8 +141,11 @@ getCategories(){
     this.changeScreen=false;
 
      this.productDetailService.getById(productId).subscribe(res=>{
-      this.productDetails=res.data
-      console.log(this.productDetails)
+      this.productDetail=res.data[0]
+      console.log(this.productDetail)
+      this.getBrands();
+      
+      
     })
   }
 
