@@ -28,7 +28,8 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(ProductValidation))]
         public async Task<Result> AddAsync(Product entity)
-        { var result = CheckCategoryCount(entity.CategoryId);
+        {
+            var result = CheckCategoryCount(entity.CategoryId);
             if (result.Success)
             {
                 await _productDal.AddAsync(entity);
@@ -94,22 +95,29 @@ namespace Business.Concrete
             var result = CheckCategoryCount(entity.CategoryId);
             if (result.Success)
             {
-            await _productDal.UpdateAsync(entity);
-            return new SuccessResult();
+                await _productDal.UpdateAsync(entity);
+                return new SuccessResult();
             }
             return new ErrorResult(result.Message);
-            
+
+        }
+        public async Task<DataResult<List<ProductDto>>> GetProductDtoByIdAsync(int id)
+        {
+            return new SuccessDataResult<List<ProductDto>>( await _productDal.GetProductDetailsAsync(x=>x.ProductId==id));
         }
 
+
         #region BusinessRules
-            private Result CheckCategoryCount(int categoryId)
+        private Result CheckCategoryCount(int categoryId)
         {
             var result = _productDal.GetAllAsync(p => p.CategoryId == categoryId);
             if (result.Result.Count >= 10)
                 return new ErrorResult("bir kategoride en fazla 10 ürün olabilir");
             return new SuccessResult();
         }
+
+
         #endregion
-        
+
     }
 }

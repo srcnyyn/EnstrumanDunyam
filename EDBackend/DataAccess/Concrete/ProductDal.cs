@@ -6,12 +6,14 @@ using DataAccess.Repositories;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq.Expressions;
 
 namespace DataAccess.Concrete
 {
     public class ProductDal : EntityRepositoryDal<Product, EdDBContext>, IProductDal
     {
-        public async Task<List<ProductDto>> GetProductDetailsAsync()
+        public async Task<List<ProductDto>> GetProductDetailsAsync(Expression<Func<ProductDto,bool>> filter=null)
         {
             using (EdDBContext context=new EdDBContext())
             {
@@ -36,7 +38,7 @@ namespace DataAccess.Concrete
                                  Quantity=p.Quantity
 
                                 };
-                                return await result.ToListAsync();
+                                return filter==null? await result.ToListAsync(): await result.Where(filter).ToListAsync();
             }
         }
     }

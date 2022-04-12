@@ -17,6 +17,7 @@ namespace Business.Abstract
         Task<DataResult<List<Product>>> GetByBrandIdAsync(int id);
 
         Task<DataResult<List<ProductDto>>> GetProductDtoAsync();
+        Task<DataResult<List<ProductDto>>> GetProductDtoByIdAsync(int id);
 
       
     }

@@ -133,6 +133,15 @@ namespace EDAPI.Controller
             }
             return BadRequest(result);
         }
+        [HttpGet("getproductdetailbyid")]
+        public async Task<IActionResult> GetProductDetailByIdAsync(int id){
+            var result = await _productService.GetProductDtoByIdAsync(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
         
     }
 }

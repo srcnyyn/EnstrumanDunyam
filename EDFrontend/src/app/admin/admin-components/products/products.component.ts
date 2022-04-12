@@ -1,6 +1,8 @@
+import { convertUpdateArguments } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { throwIfEmpty } from 'rxjs';
 
 import { Brand } from 'src/app/models/brand';
 import { Category } from 'src/app/models/category';
@@ -25,13 +27,16 @@ import { ProductDetailService } from '../../../services/common/product-detail.se
 export class ProductsComponent implements OnInit {
 
   productAddForm:FormGroup;
-  productDetails:ProductDetails[]=[]
+  productUpdateForm:FormGroup;
 
+  productDetails:ProductDetails[]=[]
   brands:Brand[]=[]
   colors:Color[]=[]
   categories:Category[]=[]
   childCats:ChildCategory[]=[]
   product:Product[]=[]
+
+  changeScreen:boolean=true;
 
   currentCategoryId:number;
   
@@ -70,6 +75,14 @@ export class ProductsComponent implements OnInit {
       quantity:['',Validators.required],
     })
   }
+ 
+  createProductUpdateForm(){
+    this.getProductWithDetails()
+    this.productUpdateForm = this.formBuilder.group({
+      id:this.product,
+      prodductName:this.product
+    })
+  }
   
   
   
@@ -104,27 +117,39 @@ getCategories(){
       let productModel = Object.assign({},this.productAddForm.value);
       this.productAdminService.add(productModel).subscribe(res=>{
         this.toastrService.success(res.message,"Ürün Eklendi")
+        this.getProductWithDetails();
+        this.productAddForm.reset();
+
       })
     }else{
       this.toastrService.error("Hatalı Giriş")
     }
   }
   delete(productId:number){
-     console.log(productId);
       this.productService.getByProductId(productId).subscribe(res=>{
         this.product=res.data
         if(this.product!=null){
           this.productAdminService.delete(this.product).subscribe(res=>{
             this.toastrService.success(res.message,"Ürün Silindi")
+            this.getProductWithDetails();
           });
         }else{
           this.toastrService.error("Ürün Silinemedi")
         }
       });
 
-    
-    
   }
+  updateScreen(productId:number){
+    this.changeScreen=false;
+
+     this.productDetailService.getById(productId).subscribe(res=>{
+      this.productDetails=res.data
+      console.log(this.productDetails)
+    })
+  }
+
+    
+    
   
 
 }
