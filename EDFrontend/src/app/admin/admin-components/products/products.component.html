@@ -1,6 +1,6 @@
 <div class="container">
   <table class="table">
-        <tr class="table-header" *ngIf="product">
+        <tr class="table-header" >
           <th>Ürün Adı</th>
           <th>Marka</th>
           <th>Renk</th>
@@ -9,13 +9,13 @@
           <th>Fiyat</th>
           <th>Stok</th>
         </tr>
-        <tr *ngIf="changeScreen">  
+        <tr *ngIf="addButton && !updateButton">  
           
           <td>
             <form [formGroup]="productAddForm">
               <mat-form-field>
                 <mat-label>Ürün Adı Giriniz</mat-label>
-                <input matInput formControlName="productName" >
+                <input matInput formControlName="productName" [value]="" >
             </mat-form-field>
           </form>
           </td>
@@ -47,8 +47,8 @@
             <form [formGroup]="productAddForm">
             <mat-form-field >
               <mat-label>Kategori Seçiniz</mat-label>
-              <mat-select   formControlName="categoryId"  [(ngModel)]="currentCategoryId"  >
-                <mat-option  *ngFor="let category of categories"  [value]="category.id" (click)="getChCatBySelectedCategory()">
+              <mat-select   formControlName="categoryId"  >
+                <mat-option  *ngFor="let category of categories"  [value]="category.id" (click)="getChCatBySelectedCategory(category.id)" >
                         {{category.categoryName}}
               </mat-option>
               </mat-select>
@@ -56,10 +56,10 @@
           </form>
           </td>
           <td>
-            <form [formGroup]="productAddForm">
+            <form  [formGroup]="productAddForm" >
             <mat-form-field  >
               <mat-label>Alt Kategori Seçiniz</mat-label>
-              <mat-select  formControlName="childCategoryId" >
+              <mat-select  formControlName="childCategoryId"  >
                 <mat-option *ngFor="let childCat of childCats "  [value]="childCat.id"  >
                   
                     {{childCat.childCategoryName}}
@@ -73,7 +73,7 @@
             <form [formGroup]="productAddForm">
             <mat-form-field >
               <mat-label>Ürün Fiyatı Giriniz</mat-label>
-              <input matInput formControlName="unitPrice"  [value]="">
+              <input matInput formControlName="unitPrice" [value]="" >
             </mat-form-field>
           </form>
           </td>
@@ -81,7 +81,7 @@
             <form [formGroup]="productAddForm">
             <mat-form-field >
               <mat-label>Ürün Adeti</mat-label>
-              <input matInput formControlName="quantity"  [value]="">
+              <input matInput formControlName="quantity" [value]="" >
             </mat-form-field>
           </form>
           </td>
@@ -91,20 +91,20 @@
           </td>
         
         </tr>
-        <tr  *ngIf="productDetail">
+        <tr  *ngIf="product && updateButton" >
           <td  >
-            <form [formGroup]="productAddForm">
+            <form [formGroup]="productUpdateForm">
               <mat-form-field>
                 <mat-label>Ürün Adı Giriniz</mat-label>
-                <input matInput formControlName="productName" [(ngModel)]="productDetail.productName">
+                <input matInput formControlName="productName" [(ngModel)]="product.productName">
             </mat-form-field>
           </form>
           </td>
           <td>
-            <form [formGroup]="productAddForm">
+            <form [formGroup]="productUpdateForm">
             <mat-form-field >
               <mat-label>Marka Seçiniz</mat-label>
-              <mat-select formControlName="brandId" [(ngModel)]="productDetail.brandName" >
+              <mat-select formControlName="brandId" [(ngModel)]="product.brandId" >
                 <mat-option  *ngFor="let brand of brands" [value]="brand.id" >
                   {{brand.brandName}}
                 </mat-option>
@@ -113,10 +113,10 @@
           </form>
           </td>
           <td>
-            <form [formGroup]="productAddForm">
+            <form [formGroup]="productUpdateForm">
             <mat-form-field >
               <mat-label>Renk Seçiniz</mat-label>
-              <mat-select formControlName="colorId" [(ngModel)]="productDetail.colorName" >
+              <mat-select formControlName="colorId" [(ngModel)]="product.colorId" >
                 <mat-option  *ngFor="let color of colors" [value]="color.id">
                   {{color.colorName}}
                 </mat-option>
@@ -124,23 +124,23 @@
             </mat-form-field>
           </form>
           </td>
-          <td *ngIf="currentCategoryId">
-            <form [formGroup]="productAddForm">
+          <td >
+            <form [formGroup]="productUpdateForm">
             <mat-form-field >
               <mat-label>Kategori Seçiniz</mat-label>
-              <mat-select   formControlName="categoryId" [(ngModel)]="currentCategoryId" [(ngModel)]="productDetail.categoryName"  >
-                <mat-option  *ngFor="let category of categories"  [value]="category.id"   >
+              <mat-select   formControlName="categoryId" [(ngModel)]="product.categoryId" >
+                <mat-option  *ngFor="let category of categories"   [value]="category.id"   (click)="getChCatBySelectedCategory(category.id)" >
                         {{category.categoryName}}
               </mat-option>
               </mat-select>
            </mat-form-field>
           </form>
           </td>
-          <td>
-            <form [formGroup]="productAddForm">
+          <td >
+            <form [formGroup]="productUpdateForm">
             <mat-form-field  >
               <mat-label>Alt Kategori Seçiniz</mat-label>
-              <mat-select  formControlName="childCategoryId"  [(ngModel)]="productDetail.childCategoryName" >
+              <mat-select  formControlName="childCategoryId"  [(ngModel)]="product.childCategoryId" >
                 <mat-option *ngFor="let childCat of childCats "  [value]="childCat.id"  >
                   
                     {{childCat.childCategoryName}}
@@ -151,23 +151,23 @@
           </form>
           </td>
           <td>
-            <form [formGroup]="productAddForm">
+            <form [formGroup]="productUpdateForm">
             <mat-form-field >
               <mat-label>Ürün Fiyatı Giriniz</mat-label>
-              <input matInput formControlName="unitPrice" [(ngModel)]="productDetail.unitPrice" [value]="">
+              <input matInput formControlName="unitPrice" [(ngModel)]="product.unitPrice" [value]="">
             </mat-form-field>
           </form>
           </td>
           <td>
-            <form [formGroup]="productAddForm">
+            <form [formGroup]="productUpdateForm">
             <mat-form-field >
               <mat-label>Ürün Adeti</mat-label>
-              <input matInput formControlName="quantity" [(ngModel)]="productDetail.quantity" [value]="">
+              <input matInput formControlName="quantity" [(ngModel)]="product.quantity" [value]="">
             </mat-form-field>
           </form>
           </td>
           <td>
-              <button class="op-button"  (click)="add()"  style="width: 110px;"   >Güncelle</button>
+              <button class="op-button"  (click)="update()"  style="width: 110px;"   >Güncelle</button>
 
           </td>
         </tr>
@@ -179,10 +179,10 @@
           <td>{{ product.colorName }}</td>
           <td>{{ product.categoryName }}</td>
           <td>{{ product.childCategoryName }}</td>
-          <td>{{ product.unitPrice }}</td>
+          <td>{{ product.unitPrice | currency: "TRY":"₺":"1.2-2" }}</td>
           <td>{{ product.quantity }}</td>
           <td > <button class="op-button"   (click)="delete(product.productId)"  >Sil</button>
-            <button class="op-button" (click)="updateScreen(product.productId)" (click)="getChCatBySelectedCategory()" >Güncelle</button></td>
+            <button class="op-button" (click)="updateScreen(product.productId)" >Güncelle</button></td>
         </tr>
      
       </table>

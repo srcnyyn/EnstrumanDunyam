@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from 'src/app/models/category';
+import { ResponseDataListModel } from 'src/app/models/response-datalist-model';
 import { ResponseDataModel } from 'src/app/models/response-data-model';
 
 @Injectable({
@@ -14,8 +15,8 @@ export class CategoryService {
     private http:HttpClient
   ) { }
 
-  getAll():Observable<ResponseDataModel<Category>>{
-     return this.http.get<ResponseDataModel<Category>>(this.apiUrl+'/category/getall');
+  getAll():Observable<ResponseDataListModel<Category>>{
+     return this.http.get<ResponseDataListModel<Category>>(this.apiUrl+'/category/getall');
   }
   getById(id:number):Observable<ResponseDataModel<Category>>{
     return this.http.get<ResponseDataModel<Category>>(this.apiUrl+'/category/getbyid?id='+id)

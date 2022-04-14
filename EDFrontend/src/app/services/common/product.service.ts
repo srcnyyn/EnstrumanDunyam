@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/models/products';
+import { ResponseDataListModel } from 'src/app/models/response-datalist-model';
 import { ResponseDataModel } from 'src/app/models/response-data-model';
 
 @Injectable({
@@ -13,28 +14,28 @@ export class ProductService {
     private http: HttpClient
   ) {}
 
-  getAll(): Observable<ResponseDataModel<Product>> {
-    return this.http.get<ResponseDataModel<Product>>(
+  getAll(): Observable<ResponseDataListModel<Product>> {
+    return this.http.get<ResponseDataListModel<Product>>(
       this.apiUrl + '/product/getall');
   }
 
-  getByBrandId(id: number): Observable<ResponseDataModel<Product>> {
-    return this.http.get<ResponseDataModel<Product>>(
+  getByBrandId(id: number): Observable<ResponseDataListModel<Product>> {
+    return this.http.get<ResponseDataListModel<Product>>(
       this.apiUrl + '/product/getbybrandid?id='+id);
   }
 
-  getByCategoryId(id: number): Observable<ResponseDataModel<Product>> {
-    return this.http.get<ResponseDataModel<Product>>(
+  getByCategoryId(id: number): Observable<ResponseDataListModel<Product>> {
+    return this.http.get<ResponseDataListModel<Product>>(
       this.apiUrl + '/product/getbycategoryid?id='+id);
   }
 
-  getByChildCategoryId(id: number): Observable<ResponseDataModel<Product>> {
-    return this.http.get<ResponseDataModel<Product>>(
+  getByChildCategoryId(id: number): Observable<ResponseDataListModel<Product>> {
+    return this.http.get<ResponseDataListModel<Product>>(
       this.apiUrl + '/product/getbychildcategoryid?id='+id);
   }
 
-  getByColorId(id: number): Observable<ResponseDataModel<Product>> {
-    return this.http.get<ResponseDataModel<Product>>(
+  getByColorId(id: number): Observable<ResponseDataListModel<Product>> {
+    return this.http.get<ResponseDataListModel<Product>>(
       this.apiUrl + '/product/getbycolorid?id='+id);
   }
 

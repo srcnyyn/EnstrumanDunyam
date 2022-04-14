@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Color } from 'src/app/models/color';
+import { ResponseDataListModel } from 'src/app/models/response-datalist-model';
 import { ResponseDataModel } from 'src/app/models/response-data-model';
 
 @Injectable({
@@ -13,8 +14,8 @@ export class ColorService {
     @Inject('APIURL') private apiUrl:string,
     private http:HttpClient
   ) { }
-  getAll():Observable<ResponseDataModel<Color>>{
-    return this.http.get<ResponseDataModel<Color>>(this.apiUrl+'/color/getall')
+  getAll():Observable<ResponseDataListModel<Color>>{
+    return this.http.get<ResponseDataListModel<Color>>(this.apiUrl+'/color/getall')
   }
   getById(id:number):Observable<ResponseDataModel<Color>>{
     return this.http.get<ResponseDataModel<Color>>(this.apiUrl+'/color/getbyid?='+id)

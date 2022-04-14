@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductDetail } from 'src/app/models/product-detail';
+import { ResponseDataListModel } from 'src/app/models/response-datalist-model';
 import { ResponseDataModel } from 'src/app/models/response-data-model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +17,8 @@ export class ProductDetailService {
 
   ) { }
 
-  getAll():Observable<ResponseDataModel<ProductDetail>>{
-    return this.http.get<ResponseDataModel<ProductDetail>>(this.apiUrl+'/product/getproductdetail')
+  getAll():Observable<ResponseDataListModel<ProductDetail>>{
+    return this.http.get<ResponseDataListModel<ProductDetail>>(this.apiUrl+'/product/getproductdetail')
   }
   getById(id:number):Observable<ResponseDataModel<ProductDetail>>{
     return this.http.get<ResponseDataModel<ProductDetail>>(this.apiUrl+'/product/getproductdetailbyid?id='+id)
