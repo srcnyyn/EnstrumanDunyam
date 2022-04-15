@@ -49,6 +49,8 @@ namespace EDAPI
             app.UseCors(builder=>builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
 
             app.UseHttpsRedirection();
+            
+            app.UseStaticFiles();
 
             app.UseRouting();
 

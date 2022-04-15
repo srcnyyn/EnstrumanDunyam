@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace EDAPI.Controller
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ImageController : ControllerBase
     {
         IImageService _imageService;
@@ -38,6 +38,15 @@ namespace EDAPI.Controller
             }
             return BadRequest(result);
         }
+        [HttpGet("getbyproductid")]
+        public async Task<IActionResult> GetByProductIdAsync(int id){
+             var result = await _imageService.GetByProductIdAsync(id);
+              if(result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
         [HttpPost("upload")]
         public async Task<IActionResult> UploadAsync([FromForm(Name ="Image")] IFormFile file , [FromForm] Image image)
         {
@@ -51,7 +60,7 @@ namespace EDAPI.Controller
             return BadRequest(result);
            
         }
-        [HttpDelete("delete")]
+        [HttpPost("delete")]
         public async Task<IActionResult> DeleteAsync(Image image)
         {
             var result = await _imageService.DeleteAsync(image);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace EDAPI.Controller
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
 
     public class ChildCategoryController : ControllerBase
     {

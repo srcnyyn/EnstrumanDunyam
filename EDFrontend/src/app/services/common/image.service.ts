@@ -21,4 +21,7 @@ getAll():Observable<ResponseDataListModel<Image>>{
 getById(id:number):Observable<ResponseDataModel<Image>>{
   return this.http.get<ResponseDataModel<Image>>(this.apiUrl+'/image/getbyid?id='+id)
 }
+getByProductId(id:number):Observable<ResponseDataListModel<Image>>{
+  return this.http.get<ResponseDataListModel<Image>>(this.apiUrl+'/image/getbyproductid?id='+id)
+}
 }

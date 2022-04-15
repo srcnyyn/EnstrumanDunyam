@@ -1,15 +1,20 @@
-<div class="container">
-  <table class="table">
-    <tr *ngFor="let product of products">
-      <td>{{ product.productName }}</td>
-    </tr>
-  </table>
+
+<div class="row" >
+  <mat-card class="example-card" *ngFor="let product of productDetail"  >
+    <mat-card-title-group>
+      <mat-card-title >{{ product.productName }}</mat-card-title>
+      <mat-card-subtitle>{{ product.childCategoryName }}</mat-card-subtitle>
+      <div >
+        <img mat-card-lg-image src="{{imageUrl}}/default.png" >
+      </div>
+    </mat-card-title-group>
+    <mat-card-content>
+          <p ><strong>Marka</strong> : {{ product.brandName }}</p>
+          <p ><strong>Renk</strong> : {{ product.colorName}}</p>
+          <p ><strong>Kategori</strong> : {{ product.categoryName}}</p>
+          <p ><strong>Fiyat</strong> : {{ product.unitPrice | currency :"TRY":"₺":"1.2-2" }}</p>
+          <p ><strong>Stok</strong> : {{ product.quantity }}</p>
+    </mat-card-content>
+</mat-card>
 </div>
 
-<div class="container">
-<table class="table">
-  <tr *ngFor="let product of products">
-    <!-- <td *ngIf="category.id == product.categoryId">{{product.productName}}</td> -->
-  </tr>
-</table>
-</div>

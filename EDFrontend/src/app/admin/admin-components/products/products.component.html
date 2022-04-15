@@ -1,6 +1,6 @@
 <div class="container">
   <table class="table">
-        <tr class="table-header" >
+        <tr class="table-row" >
           <th>Ürün Adı</th>
           <th>Marka</th>
           <th>Renk</th>
@@ -181,7 +181,7 @@
           <td>{{ product.childCategoryName }}</td>
           <td>{{ product.unitPrice | currency: "TRY":"₺":"1.2-2" }}</td>
           <td>{{ product.quantity }}</td>
-          <td > <button class="op-button"   (click)="delete(product.productId)"  >Sil</button>
+          <td > <button class="op-button"    (click)="delete(product.productId)"  >Sil</button>
             <button class="op-button" (click)="updateScreen(product.productId)" >Güncelle</button></td>
         </tr>
      

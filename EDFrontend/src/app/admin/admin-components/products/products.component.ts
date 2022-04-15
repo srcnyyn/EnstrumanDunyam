@@ -95,6 +95,7 @@ export class ProductsComponent implements OnInit {
         "quantity":[this.product.quantity, Validators.required]
       })
     })
+    this.productDetail=res.data
   })
 }  
  
