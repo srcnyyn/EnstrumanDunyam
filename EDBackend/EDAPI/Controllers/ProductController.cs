@@ -1,8 +1,10 @@
 using Business.Abstract;
+using Business.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Entities.Concrete;
 using DataAccess.Entities.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace EDAPI.Controller
@@ -101,11 +103,14 @@ namespace EDAPI.Controller
 
 
         }
-        [HttpPost("delete")]
-        public async Task<IActionResult> DeleteAsync(Product product)
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteAsync([FromHeader] string id)
         {
+            
+            DataResult<Product> product = await _productService.GetByProductIdAsync(Convert.ToInt32(id));
 
-            var result = await _productService.DeleteAsync(product);
+
+            var result = await _productService.DeleteAsync(product.Data);
             if (result.Success)
             {
                 return Ok(result);

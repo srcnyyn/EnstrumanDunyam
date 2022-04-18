@@ -146,7 +146,7 @@ getCategories(){
     this.productService.getByProductId(productId).subscribe(res=>{
       this.product=res.data
       if(this.product!=null){
-        this.productAdminService.delete(this.product).subscribe(res=>{
+        this.productAdminService.delete(productId.toString()).subscribe(res=>{
           this.toastrService.success(res.message,"Ürün Silindi")
           this.getProductWithDetails();
           this.createdProductAddForm();
