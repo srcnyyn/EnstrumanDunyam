@@ -12,13 +12,16 @@ export class CategoryService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('CATEGORYURL') private categoryUrl:string,
     private http:HttpClient
   ) { }
 
   getAll():Observable<ResponseDataListModel<Category>>{
-     return this.http.get<ResponseDataListModel<Category>>(this.apiUrl+'/category/getall');
+     return this.http.get<ResponseDataListModel<Category>>(
+       this.apiUrl+ this.categoryUrl+'/getall');
   }
   getById(id:number):Observable<ResponseDataModel<Category>>{
-    return this.http.get<ResponseDataModel<Category>>(this.apiUrl+'/category/getbyid?id='+id)
+    return this.http.get<ResponseDataModel<Category>>(
+      this.apiUrl+this.categoryUrl+'/getbyid?id='+id)
   }
 }

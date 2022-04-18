@@ -9,6 +9,8 @@ export class CategoryAdminService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('CATEGORYURL') private categoryUrl:string,
+    
     private http:HttpClient
   ) { }
 

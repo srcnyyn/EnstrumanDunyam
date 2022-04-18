@@ -12,13 +12,14 @@ export class BrandService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('BRANDURL') private brandUrl:string,
     private http:HttpClient
   ) { }
 
 getAll():Observable<ResponseDataListModel<Brand>>{
-  return this.http.get<ResponseDataListModel<Brand>>(this.apiUrl+'/brand/getall')
+  return this.http.get<ResponseDataListModel<Brand>>(this.apiUrl+this.brandUrl+'/getall')
 }
 getById(id:number):Observable<ResponseDataModel<Brand>>{
-  return this.http.get<ResponseDataModel<Brand>>(this.apiUrl+'/brand/getbyid?id='+id)
+  return this.http.get<ResponseDataModel<Brand>>(this.apiUrl+this.brandUrl+'/getbyid?id='+id)
 }
 }

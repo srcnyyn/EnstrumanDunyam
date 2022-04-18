@@ -10,6 +10,7 @@ export class BrandAdminService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('BRANDURL') private brandUrl:string,
     private http:HttpClient
   ) { }
   

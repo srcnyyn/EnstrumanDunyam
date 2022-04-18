@@ -12,17 +12,18 @@ export class ChildCategoryService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('CHILDCATEGORYURL') private childCategoryUrl:string,
     private http:HttpClient
   ) { }
 
   getAll():Observable<ResponseDataListModel<ChildCategory>>{
-    return this.http.get<ResponseDataListModel<ChildCategory>>(this.apiUrl+'/childcategory/getall')
+    return this.http.get<ResponseDataListModel<ChildCategory>>(this.apiUrl+ this.childCategoryUrl+'/getall')
   }
   getById(id:number):Observable<ResponseDataModel<ChildCategory>>{
-    return this.http.get<ResponseDataModel<ChildCategory>>(this.apiUrl+'/childcategory/getbyid?='+id)
+    return this.http.get<ResponseDataModel<ChildCategory>>(this.apiUrl+this.childCategoryUrl+'/getbyid?='+id)
   }
   getByCategoryId(categoryId:number):Observable<ResponseDataListModel<ChildCategory>>{
 
-    return this.http.get<ResponseDataListModel<ChildCategory>>(this.apiUrl+'/childcategory/getbycategoryid?categoryId='+categoryId)
+    return this.http.get<ResponseDataListModel<ChildCategory>>(this.apiUrl+this.childCategoryUrl+'/getbycategoryid?categoryId='+categoryId)
   }
 }

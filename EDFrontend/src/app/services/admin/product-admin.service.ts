@@ -11,17 +11,19 @@ export class ProductAdminService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('PRODUCTURL') private productUrl:string,
+    
     private http:HttpClient
   ) { }
 
   add(product:Product):Observable<ResponseModel>{
-    return this.http.post<ResponseModel>(this.apiUrl+'/product/add',product)
+    return this.http.post<ResponseModel>(this.apiUrl+ this.productUrl+'/add',product)
   }
   delete(product:Product):Observable<ResponseModel>{
-    return this.http.post<ResponseModel>(this.apiUrl+'/product/delete',product)
+    return this.http.post<ResponseModel>(this.apiUrl+this.productUrl+'/delete',product)
   }
   update(product:Product):Observable<ResponseModel>{
-    return this.http.put<ResponseModel>(this.apiUrl+'/product/update',product)
+    return this.http.put<ResponseModel>(this.apiUrl+this.productUrl+'/update',product)
   }
   
 }

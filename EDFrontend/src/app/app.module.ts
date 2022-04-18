@@ -38,7 +38,15 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   
   
-  providers: [{provide: "APIURL", useValue:"https://localhost:5001"}],
+  providers: [
+    {provide: "APIURL", useValue:"https://localhost:5001"},
+    {provide:"PRODUCTURL", useValue:"/product"},
+    {provide:"BRANDURL", useValue:"/brand"},
+    {provide:"COLORURL", useValue:"/color"},
+    {provide:"CATEGORYURL", useValue:"/category"},
+    {provide:"CHILDCATEGORYURL", useValue:"/childcategory"},
+    {provide:"IMAGEURL", useValue:"/image"}
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

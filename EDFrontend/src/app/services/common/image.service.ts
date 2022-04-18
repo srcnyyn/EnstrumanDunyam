@@ -12,16 +12,17 @@ export class ImageService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('IMAGEURL') private imageUrl:string,
     private http:HttpClient
   ) { }
 
 getAll():Observable<ResponseDataListModel<Image>>{
-  return  this.http.get<ResponseDataListModel<Image>>(this.apiUrl+'/image/getall')
+  return  this.http.get<ResponseDataListModel<Image>>(this.apiUrl+this.imageUrl+'/getall')
 }
 getById(id:number):Observable<ResponseDataModel<Image>>{
-  return this.http.get<ResponseDataModel<Image>>(this.apiUrl+'/image/getbyid?id='+id)
+  return this.http.get<ResponseDataModel<Image>>(this.apiUrl+this.imageUrl+'/getbyid?id='+id)
 }
 getByProductId(id:number):Observable<ResponseDataListModel<Image>>{
-  return this.http.get<ResponseDataListModel<Image>>(this.apiUrl+'/image/getbyproductid?id='+id)
+  return this.http.get<ResponseDataListModel<Image>>(this.apiUrl+this.imageUrl+'/getbyproductid?id='+id)
 }
 }

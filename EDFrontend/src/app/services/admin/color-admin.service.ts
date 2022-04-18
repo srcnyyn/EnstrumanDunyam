@@ -9,6 +9,7 @@ export class ColorAdminService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('COLORURL') private colorUrl:string,
     private http:HttpClient
   ) { }
 

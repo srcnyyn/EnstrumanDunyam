@@ -12,12 +12,13 @@ export class ColorService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('COLORURL') private colorUrl:string,
     private http:HttpClient
   ) { }
   getAll():Observable<ResponseDataListModel<Color>>{
-    return this.http.get<ResponseDataListModel<Color>>(this.apiUrl+'/color/getall')
+    return this.http.get<ResponseDataListModel<Color>>(this.apiUrl+ this.colorUrl+'/getall')
   }
   getById(id:number):Observable<ResponseDataModel<Color>>{
-    return this.http.get<ResponseDataModel<Color>>(this.apiUrl+'/color/getbyid?='+id)
+    return this.http.get<ResponseDataModel<Color>>(this.apiUrl+this.colorUrl+'/getbyid?='+id)
   }
 }

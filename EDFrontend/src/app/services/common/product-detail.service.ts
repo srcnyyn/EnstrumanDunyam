@@ -13,15 +13,17 @@ export class ProductDetailService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('PRODUCTURL') private productUrl: string,
+
     private http:HttpClient
 
   ) { }
 
   getAll():Observable<ResponseDataListModel<ProductDetail>>{
-    return this.http.get<ResponseDataListModel<ProductDetail>>(this.apiUrl+'/product/getproductdetail')
+    return this.http.get<ResponseDataListModel<ProductDetail>>(this.apiUrl+ this.productUrl+'/getproductdetail')
   }
   getById(id:number):Observable<ResponseDataModel<ProductDetail>>{
-    return this.http.get<ResponseDataModel<ProductDetail>>(this.apiUrl+'/product/getproductdetailbyid?id='+id)
+    return this.http.get<ResponseDataModel<ProductDetail>>(this.apiUrl+ this.productUrl+'/getproductdetailbyid?id='+id)
   }
   
 }

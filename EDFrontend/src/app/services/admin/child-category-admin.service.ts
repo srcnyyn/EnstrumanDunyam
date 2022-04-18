@@ -10,6 +10,7 @@ export class ChildCategoryAdminService {
 
   constructor(
     @Inject('APIURL') private apiUrl:string,
+    @Inject('CHILDCATEGORYURL') private childCategoryUrl:string,
     private http:HttpClient
   ) { }
 
