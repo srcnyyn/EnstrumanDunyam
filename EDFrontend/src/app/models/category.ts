@@ -1,5 +1,5 @@
 import { BaseModel } from "./basemodel";
 
-export interface Category extends BaseModel{
+export class Category extends BaseModel{
     categoryName:string;
 }

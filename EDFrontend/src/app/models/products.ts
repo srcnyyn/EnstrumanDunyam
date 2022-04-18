@@ -1,5 +1,5 @@
 import { BaseModel } from "./basemodel";
-export interface Product extends BaseModel{
+export class Product extends BaseModel{
     brandId:number;
     colorId:number;
     childCategoryId:number;

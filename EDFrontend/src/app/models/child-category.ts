@@ -1,6 +1,6 @@
 import { BaseModel } from "./basemodel";
 
-export interface ChildCategory extends BaseModel{
+export class ChildCategory extends BaseModel{
 
     categoryId:number;
     childCategoryName: string;

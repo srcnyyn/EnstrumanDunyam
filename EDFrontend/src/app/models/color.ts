@@ -1,5 +1,5 @@
 import { BaseModel } from "./basemodel";
 
-export interface Color extends BaseModel{
+export class Color extends BaseModel{
     colorName:string;
 }
